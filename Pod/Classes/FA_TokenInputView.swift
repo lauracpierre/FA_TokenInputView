@@ -57,7 +57,7 @@ public class FA_TokenInputView: UIView {
     @IBInspectable var _autocorrectionType: UITextAutocorrectionType = .No
     @IBInspectable var _drawBottomBorder: Bool = true
     
-    var allTokens: [FA_Token] {
+    public var allTokens: [FA_Token] {
         get {
             return self.tokens.map { $0 }
         }
