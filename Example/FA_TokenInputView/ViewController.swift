@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     
     var toField: FA_TokenInputView!
     
+    var ccField: FA_TokenInputView!
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -34,6 +36,19 @@ class ViewController: UIViewController {
             toField.fieldView = leftButton
         }
         
+        ccField = FA_TokenInputView()
+        ccField.setTranslatesAutoresizingMaskIntoConstraints(false)
+        ccField.placeholderText = "Enter a name"
+        ccField.drawBottomBorder = true
+        ccField.delegate = self
+        ccField.tintColor = UIColor.blueColor()
+        ccField.fieldName = "Cc"
+        
+        var buttonright2: AnyObject = UIButton.buttonWithType(.ContactAdd)
+        if let buttonright2 = buttonright2 as? UIButton {
+            ccField.accessoryView = buttonright2
+        }
+        
     }
 
     override func viewDidLoad() {
@@ -43,6 +58,7 @@ class ViewController: UIViewController {
         
         self.title = "TokenInputViewDemo"
         self.view.addSubview(toField)
+        self.view.addSubview(ccField)
         
         var button1 = UIButton()
         button1.setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -62,13 +78,15 @@ class ViewController: UIViewController {
         
         let views = [
             "to": toField,
+            "cc": ccField,
             "b1": button1,
             "b2": button2,
             "topGuide": self.topLayoutGuide
         ] as [NSObject: AnyObject]
         
-        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[topGuide][to]-30-[b1]", options: nil, metrics: nil, views: views))
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[topGuide][to][cc]-30-[b1]", options: nil, metrics: nil, views: views))
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[to]|", options: nil, metrics: nil, views: views))
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[cc]|", options: nil, metrics: nil, views: views))
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[b1]-[b2]-|", options: .AlignAllCenterY, metrics: nil, views: views))
         // Do any additional setup after loading the view, typically from a nib.
     }

@@ -385,11 +385,13 @@ extension FA_TokenInputView {
 extension FA_TokenInputView: UITextFieldDelegate  {
     
     public func textFieldDidBeginEditing(textField: UITextField) {
+        self.accessoryView?.hidden = false
         self.delegate?.tokenInputViewDidBeginEditing?(self)
         self.unselectAllTokenViewsAnimated(true)
     }
     
     public func textFieldDidEndEditing(textField: UITextField) {
+        self.accessoryView?.hidden = true
         self.delegate?.tokenInputViewDidEnditing?(self)
     }
     
@@ -490,6 +492,7 @@ extension FA_TokenInputView {
             }
             _accessoryView?.removeFromSuperview()
             _accessoryView = newValue
+            _accessoryView?.hidden = true
             if let _accessoryView = _accessoryView {
                 self.addSubview(_accessoryView)
             }
