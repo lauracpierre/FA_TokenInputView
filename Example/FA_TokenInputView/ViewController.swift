@@ -44,13 +44,32 @@ class ViewController: UIViewController {
         self.title = "TokenInputViewDemo"
         self.view.addSubview(toField)
         
+        var button1 = UIButton()
+        button1.setTranslatesAutoresizingMaskIntoConstraints(false)
+        button1.setTitle("Zero Height", forState: .Normal)
+        button1.addTarget(self, action: "setZeroHeightToField", forControlEvents: .TouchUpInside)
+        button1.titleLabel?.backgroundColor = UIColor.redColor()
+        
+        var button2 = UIButton()
+        button2.setTranslatesAutoresizingMaskIntoConstraints(false)
+        button2.setTitle("Auto Height", forState: .Normal)
+        button2.addTarget(self, action: "setAutoHeightToField", forControlEvents: .TouchUpInside)
+        button2.tintColor = toField.tintColor
+        button2.titleLabel?.backgroundColor = UIColor.redColor()
+        
+        self.view.addSubview(button1)
+        self.view.addSubview(button2)
+        
         let views = [
             "to": toField,
+            "b1": button1,
+            "b2": button2,
             "topGuide": self.topLayoutGuide
         ] as [NSObject: AnyObject]
         
-        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[topGuide][to]", options: nil, metrics: nil, views: views))
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[topGuide][to]-30-[b1]", options: nil, metrics: nil, views: views))
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[to]|", options: nil, metrics: nil, views: views))
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[b1]-[b2]-|", options: .AlignAllCenterY, metrics: nil, views: views))
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -61,6 +80,14 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setZeroHeightToField() {
+        toField.setHeightToZero()
+    }
+    
+    func setAutoHeightToField() {
+        toField.setHeightToAuto()
     }
 
 }

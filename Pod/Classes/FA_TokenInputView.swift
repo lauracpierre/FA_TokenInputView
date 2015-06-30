@@ -76,6 +76,7 @@ public class FA_TokenInputView: UIView {
     private var textField: UITextField!
     private var fieldLabel: UILabel!
     private var intrinsicContentHeight: CGFloat!
+    private var heightZeroConstraint: NSLayoutConstraint!
     
     private static var HSPACE: CGFloat = 0.0
     private static var TEXT_FIELD_HSPACE: CGFloat = 4.0
@@ -119,6 +120,8 @@ public class FA_TokenInputView: UIView {
         self.intrinsicContentHeight = FA_TokenInputView.STANDARD_ROW_HEIGHT
         self.repositionViews()
         self.backgroundColor = UIColor.whiteColor()
+        
+        self.heightZeroConstraint = NSLayoutConstraint(item: self, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: 0.0)
     }
     
     override public func intrinsicContentSize() -> CGSize {
@@ -197,6 +200,12 @@ public class FA_TokenInputView: UIView {
     
     func repositionViews() {
         let bounds = self.bounds
+        
+        if bounds.height == 0 {
+            self.repositionViewZeroHeight()
+            return
+        }
+        
         var rightBoundary = CGRectGetWidth(bounds) - FA_TokenInputView.PADDING_RIGHT
         var firstLineRightBoundary = rightBoundary
         
@@ -207,6 +216,7 @@ public class FA_TokenInputView: UIView {
         
         // Position field view (if set)
         if let fieldView = self.fieldView {
+            fieldView.sizeToFit()
             var fieldViewRect = fieldView.frame
             fieldViewRect.origin.x = curX + FA_TokenInputView.FIELD_MARGIN_X
             fieldViewRect.origin.y = curY + ((FA_TokenInputView.STANDARD_ROW_HEIGHT - CGRectGetHeight(fieldViewRect))/2.0)
@@ -217,6 +227,7 @@ public class FA_TokenInputView: UIView {
         
         // Position field label (if field name is set)
         if !self.fieldLabel.hidden {
+            self.fieldLabel.sizeToFit()
             var fieldLabelRect = self.fieldLabel.frame
             fieldLabelRect.origin.x = curX + FA_TokenInputView.FIELD_MARGIN_X
             fieldLabelRect.origin.y = curY + ((FA_TokenInputView.STANDARD_ROW_HEIGHT-CGRectGetHeight(fieldLabelRect))/2.0)
@@ -227,6 +238,7 @@ public class FA_TokenInputView: UIView {
         
         // Position accessory view (if set)
         if let accessoryView = self.accessoryView {
+            accessoryView.sizeToFit()
             var accessoryRect = accessoryView.frame
             accessoryRect.origin.x = CGRectGetWidth(bounds) - FA_TokenInputView.PADDING_RIGHT - CGRectGetWidth(accessoryRect)
             accessoryRect.origin.y = curY
@@ -238,6 +250,7 @@ public class FA_TokenInputView: UIView {
         // Position token views
         var tokenRect = CGRectNull
         for view in self.tokenViews {
+            view.sizeToFit()
             tokenRect = view.frame
             
             let tokenBoundary = isOnFirstLine ? firstLineRightBoundary : rightBoundary
@@ -288,6 +301,27 @@ public class FA_TokenInputView: UIView {
 
     }
     
+    private func repositionViewZeroHeight() {
+        if let fieldView = self.fieldView {
+            let frame = fieldView.frame
+            fieldView.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.width, 0)
+        }
+        if let accessoryView = self.accessoryView {
+            let frame = accessoryView.frame
+            accessoryView.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.width, 0)
+        }
+        let flFrame = fieldLabel.frame
+        fieldLabel.frame = CGRectMake(flFrame.origin.x, flFrame.origin.y, flFrame.width, 0)
+        
+        let tfFrame = textField.frame
+        textField.frame = CGRectMake(tfFrame.origin.x, tfFrame.origin.y, tfFrame.width, 0)
+        
+        for view in self.tokenViews {
+            let frame = view.frame
+            view.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.width, 0)
+        }
+    }
+    
     override public func layoutSubviews() {
         super.layoutSubviews()
         self.repositionViews()
@@ -305,6 +339,14 @@ public class FA_TokenInputView: UIView {
     
     func onTextFieldDidChange(textfield: UITextField) {
         self.delegate?.tokenInputViewDidChangeText?(self, text: textfield.text)
+    }
+    
+    public func setHeightToZero() {
+        self.addConstraint(self.heightZeroConstraint)
+    }
+    
+    public func setHeightToAuto() {
+        self.removeConstraint(self.heightZeroConstraint)
     }
 }
 
