@@ -5,8 +5,8 @@ import Foundation
 
 @objc public class FA_Token: Equatable {
     
-    var displayText: String!
-    var baseObject: AnyObject!
+    public var displayText: String!
+    public var baseObject: AnyObject!
     
     public init(displayText theText: String, baseObject theObject: AnyObject) {
         self.displayText = theText
