@@ -134,7 +134,7 @@ public class FA_TokenInputView: UIView {
         }
     }
     
-    func addToken(token theToken: FA_Token) {
+    public func addToken(token theToken: FA_Token) {
         if contains(self.tokens, theToken) {
             return
         }
@@ -160,7 +160,7 @@ public class FA_TokenInputView: UIView {
         self.repositionViews()
     }
     
-    func removeToken(token theToken: FA_Token) {
+    public func removeToken(token theToken: FA_Token) {
         if let index = find(self.tokens, theToken) {
             self.removeTokenAtIndex(index)
         }
