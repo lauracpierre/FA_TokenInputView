@@ -1,0 +1,14 @@
+PODS:
+  - FA_TokenInputView (0.1.0)
+
+DEPENDENCIES:
+  - FA_TokenInputView (from `../`)
+
+EXTERNAL SOURCES:
+  FA_TokenInputView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FA_TokenInputView: 903eb7382391c1628ed9f37c5af9b03d1f618987
+
+COCOAPODS: 0.37.2
