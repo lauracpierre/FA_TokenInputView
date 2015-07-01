@@ -55,7 +55,7 @@ public class FA_TokenInputView: UIView {
     @IBInspectable var _keyboardType: UIKeyboardType = .Default
     @IBInspectable var _autocapitalizationType: UITextAutocapitalizationType = .None
     @IBInspectable var _autocorrectionType: UITextAutocorrectionType = .No
-    @IBInspectable var _drawBottomBorder: Bool = true
+    @IBInspectable var _drawBottomBorder: Bool = false
     
     public var allTokens: [FA_Token] {
         get {
@@ -68,6 +68,13 @@ public class FA_TokenInputView: UIView {
 
     var editing: Bool {
         get { return self.textField.editing }
+    }
+    
+    public var font: UIFont! {
+        didSet {
+            self.fieldLabel?.font = self.font
+            self.textField?.font = self.font
+        }
     }
     
     
@@ -101,6 +108,7 @@ public class FA_TokenInputView: UIView {
     
     func commonInit() {
         
+        self.font = UIFont.systemFontOfSize(17.0)
         self.textField = UITextField(frame: self.bounds)
         self.textField.backgroundColor = UIColor.clearColor()
         self.textField.keyboardType = self.keyboardType;
@@ -111,7 +119,6 @@ public class FA_TokenInputView: UIView {
         self.addSubview(self.textField)
         
         self.fieldLabel = UILabel(frame: CGRectZero)
-        self.fieldLabel.font = self.textField.font;
         self.fieldLabel.textColor = UIColor.lightGrayColor()
         self.addSubview(self.fieldLabel)
         self.fieldLabel.hidden = true
@@ -142,6 +149,7 @@ public class FA_TokenInputView: UIView {
         
         self.tokens.append(theToken)
         var tokenView = FA_TokenView(token: theToken)
+        tokenView.font = self.font
         if let tint = self.tintColor {
             tokenView.setTintColor(color: tint)
         }

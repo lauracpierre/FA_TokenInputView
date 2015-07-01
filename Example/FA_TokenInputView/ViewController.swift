@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         toField.delegate = self
         toField.tintColor = UIColor.redColor()
         toField.fieldName = "To"
+        toField.font = UIFont.systemFontOfSize(14.0)
         
         var button: AnyObject = UIButton.buttonWithType(.ContactAdd)
         if let button = button as? UIButton {

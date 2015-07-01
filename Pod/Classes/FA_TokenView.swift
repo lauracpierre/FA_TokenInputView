@@ -28,6 +28,13 @@ class FA_TokenView: UIView {
     private var selectedBackgroundView: UIView!
     private var selectedLabel: UILabel!
     
+    var font: UIFont! {
+        didSet {
+            self.label.font = self.font
+            self.selectedLabel.font = self.font
+        }
+    }
+    
     init(token theToken: FA_Token) {
         super.init(frame: CGRectZero)
         
@@ -36,7 +43,6 @@ class FA_TokenView: UIView {
             tintColor = tint
         }
         self.label = UILabel(frame: CGRectMake(FA_TokenView.PADDING_X, FA_TokenView.PADDING_Y, 0, 0))
-        self.label.font = UIFont.systemFontOfSize(17.0)
         self.label.textColor = tintColor
         self.label.backgroundColor = UIColor.clearColor()
         self.addSubview(label)
@@ -48,7 +54,6 @@ class FA_TokenView: UIView {
         self.addSubview(self.selectedBackgroundView)
         
         self.selectedLabel = UILabel(frame: CGRectMake(FA_TokenView.PADDING_X, FA_TokenView.PADDING_Y, 0, 0))
-        self.selectedLabel.font = self.label.font
         self.selectedLabel.textColor = UIColor.whiteColor()
         self.selectedLabel.backgroundColor = UIColor.clearColor()
         self.selectedLabel.hidden = true
