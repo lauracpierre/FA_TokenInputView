@@ -80,7 +80,7 @@ public class FA_TokenInputView: UIView {
     
     private var tokens: [FA_Token] = []
     private var tokenViews: [FA_TokenView] = []
-    private var textField: UITextField!
+    private var textField: FA_BackspaceDetectingTextField!
     private var fieldLabel: UILabel!
     private var intrinsicContentHeight: CGFloat!
     private var heightZeroConstraint: NSLayoutConstraint!
@@ -109,7 +109,7 @@ public class FA_TokenInputView: UIView {
     func commonInit() {
         
         self.font = UIFont.systemFontOfSize(17.0)
-        self.textField = UITextField(frame: self.bounds)
+        self.textField = FA_BackspaceDetectingTextField(frame: self.bounds)
         self.textField.backgroundColor = UIColor.clearColor()
         self.textField.keyboardType = self.keyboardType;
         self.textField.autocorrectionType = self.autocorrectionType;
@@ -564,4 +564,20 @@ extension FA_TokenInputView: FA_TokenViewDelegate {
     }
 }
 
-
+// MARK: FA_BackspceDetectingTextfield delegate
+extension FA_TokenInputView: FA_BackspaceDetectingTextFieldDelegate {
+    func textFieldDidDeleteBackward(textField: UITextField) {
+        // Delay selecting the next token slightly, so that on iOS 8
+        // the deleteBackward on CLTokenView is not called immediately,
+        // causing a double-delete
+        dispatch_async(dispatch_get_main_queue(), {
+            if textField.text.isEmpty  {
+                
+                if let tokenView = self.tokenViews.last {
+                    self.selectTokenView(tokenView: tokenView, animated: true)
+                    self.textField.resignFirstResponder()
+                }
+            }
+        })
+    }
+}
