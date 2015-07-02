@@ -72,8 +72,22 @@ public class FA_TokenInputView: UIView {
     
     public var font: UIFont! {
         didSet {
-            self.fieldLabel?.font = self.font
             self.textField?.font = self.font
+            for view in tokenViews {
+                view.font = self.font
+            }
+        }
+    }
+    
+    public var fieldNameFont: UIFont! {
+        didSet {
+            self.fieldLabel?.font = self.fieldNameFont
+        }
+    }
+    
+    public var fieldNameColor: UIColor! {
+        didSet {
+            self.fieldLabel?.textColor = self.fieldNameColor
         }
     }
     
