@@ -63,7 +63,7 @@ public class FA_TokenInputView: UIView {
         }
     }
     var text: String {
-        get { return self.textField.text }
+        get { return self.textField.text! }
     }
 
     var editing: Bool {
@@ -115,7 +115,8 @@ public class FA_TokenInputView: UIView {
         self.commonInit()
     }
     
-    required public init(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
+
         super.init(coder: aDecoder)
         self.commonInit()
     }
@@ -156,13 +157,13 @@ public class FA_TokenInputView: UIView {
     }
     
     public func addToken(token theToken: FA_Token) {
-        if contains(self.tokens, theToken) {
+        if self.tokens.contains(theToken) {
             return
         }
         
         
         self.tokens.append(theToken)
-        var tokenView = FA_TokenView(token: theToken)
+        let tokenView = FA_TokenView(token: theToken)
         tokenView.font = self.font
         if let tint = self.tintColor {
             tokenView.setTintColor(color: tint)
@@ -183,7 +184,7 @@ public class FA_TokenInputView: UIView {
     }
     
     public func removeToken(token theToken: FA_Token) {
-        if let index = find(self.tokens, theToken) {
+        if let index = self.tokens.indexOf(theToken) {
             self.removeTokenAtIndex(index)
         }
     }
@@ -204,8 +205,8 @@ public class FA_TokenInputView: UIView {
     func tokenizeTextFieldText() -> FA_Token? {
 
         let text = self.textField.text;
-        if !text.isEmpty {
-            if let token = self.delegate?.tokenInputViewTokenForText?(self, text: text) {
+        if !text!.isEmpty {
+            if let token = self.delegate?.tokenInputViewTokenForText?(self, text: text!) {
                 self.addToken(token: token)
                 self.onTextFieldDidChange(self.textField)
                 return token
@@ -228,7 +229,7 @@ public class FA_TokenInputView: UIView {
             return
         }
         
-        var rightBoundary = CGRectGetWidth(bounds) - FA_TokenInputView.PADDING_RIGHT
+        let rightBoundary = CGRectGetWidth(bounds) - FA_TokenInputView.PADDING_RIGHT
         var firstLineRightBoundary = rightBoundary
         
         var curX = FA_TokenInputView.PADDING_LEFT
@@ -360,7 +361,7 @@ public class FA_TokenInputView: UIView {
     }
     
     func onTextFieldDidChange(textfield: UITextField) {
-        self.delegate?.tokenInputViewDidChangeText?(self, text: textfield.text)
+        self.delegate?.tokenInputViewDidChangeText?(self, text: textfield.text!)
     }
     
     public func setHeightToZero() {
@@ -569,7 +570,7 @@ extension FA_TokenInputView: FA_TokenViewDelegate {
             self.textField.text = theText
         }
         // Then remove the view from our data
-        if let index = find(self.tokenViews, tokenView) {
+        if let index = self.tokenViews.indexOf(tokenView) {
             self.removeTokenAtIndex(index)
         }
     }
@@ -585,7 +586,7 @@ extension FA_TokenInputView: FA_BackspaceDetectingTextFieldDelegate {
         // the deleteBackward on CLTokenView is not called immediately,
         // causing a double-delete
         dispatch_async(dispatch_get_main_queue(), {
-            if textField.text.isEmpty  {
+            if textField.text?.isEmpty ?? true {
                 
                 if let tokenView = self.tokenViews.last {
                     self.selectTokenView(tokenView: tokenView, animated: true)

@@ -15,11 +15,11 @@ class ViewController: UIViewController {
     
     var ccField: FA_TokenInputView!
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         toField = FA_TokenInputView()
-        toField.setTranslatesAutoresizingMaskIntoConstraints(false)
+        toField.translatesAutoresizingMaskIntoConstraints = false
         toField.placeholderText = "Enter a name"
         toField.drawBottomBorder = true
         toField.delegate = self
@@ -29,25 +29,25 @@ class ViewController: UIViewController {
         toField.fieldNameFont = UIFont.systemFontOfSize(13.0)
         toField.fieldNameColor = UIColor.greenColor()
         
-        var button: AnyObject = UIButton.buttonWithType(.ContactAdd)
+        let button: AnyObject = UIButton(type: .ContactAdd)
         if let button = button as? UIButton {
             toField.accessoryView = button
         }
         
-        var leftButton: AnyObject = UIButton.buttonWithType(.InfoDark)
+        let leftButton: AnyObject = UIButton(type: .InfoDark)
         if let leftButton = leftButton as? UIButton {
             toField.fieldView = leftButton
         }
         
         ccField = FA_TokenInputView()
-        ccField.setTranslatesAutoresizingMaskIntoConstraints(false)
+        ccField.translatesAutoresizingMaskIntoConstraints = false
         ccField.placeholderText = "Enter a name"
         ccField.drawBottomBorder = true
         ccField.delegate = self
         ccField.tintColor = UIColor.blueColor()
         ccField.fieldName = "Cc"
         
-        var buttonright2: AnyObject = UIButton.buttonWithType(.ContactAdd)
+        let buttonright2: AnyObject = UIButton(type: .ContactAdd)
         if let buttonright2 = buttonright2 as? UIButton {
             ccField.accessoryView = buttonright2
         }
@@ -63,14 +63,14 @@ class ViewController: UIViewController {
         self.view.addSubview(toField)
         self.view.addSubview(ccField)
         
-        var button1 = UIButton()
-        button1.setTranslatesAutoresizingMaskIntoConstraints(false)
+        let button1 = UIButton()
+        button1.translatesAutoresizingMaskIntoConstraints = false
         button1.setTitle("Zero Height", forState: .Normal)
         button1.addTarget(self, action: "setZeroHeightToField", forControlEvents: .TouchUpInside)
         button1.titleLabel?.backgroundColor = UIColor.redColor()
         
-        var button2 = UIButton()
-        button2.setTranslatesAutoresizingMaskIntoConstraints(false)
+        let button2 = UIButton()
+        button2.translatesAutoresizingMaskIntoConstraints = false
         button2.setTitle("Auto Height", forState: .Normal)
         button2.addTarget(self, action: "setAutoHeightToField", forControlEvents: .TouchUpInside)
         button2.tintColor = toField.tintColor
@@ -85,12 +85,13 @@ class ViewController: UIViewController {
             "b1": button1,
             "b2": button2,
             "topGuide": self.topLayoutGuide
-        ] as [NSObject: AnyObject]
+        ] as [String: AnyObject]
         
-        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[topGuide][to][cc]-30-[b1]", options: nil, metrics: nil, views: views))
-        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[to]|", options: nil, metrics: nil, views: views))
-        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[cc]|", options: nil, metrics: nil, views: views))
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[topGuide][to][cc]-30-[b1]", options: .DirectionLeadingToTrailing, metrics: nil, views: views))
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[to]|", options: .DirectionLeftToRight, metrics: nil, views: views))
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[cc]|", options: .DirectionLeftToRight, metrics: nil, views: views))
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[b1]-[b2]-|", options: .AlignAllCenterY, metrics: nil, views: views))
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     

@@ -3,7 +3,7 @@
 import Foundation
 
 
-@objc public class FA_Token: Equatable {
+@objc public class FA_Token: NSObject {
     
     public var displayText: String!
     public var baseObject: AnyObject!

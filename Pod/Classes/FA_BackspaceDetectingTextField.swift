@@ -22,7 +22,7 @@ protocol FA_BackspaceDetectingTextFieldDelegate: class, UITextFieldDelegate {
 *
 * @since v1.0
 */
-class FA_BackspaceDetectingTextField: UITextField, UIKeyInput {
+class FA_BackspaceDetectingTextField: UITextField {
     
     weak var extendedDelegate: FA_BackspaceDetectingTextFieldDelegate? {
         get { return self.delegate as? FA_BackspaceDetectingTextFieldDelegate }
@@ -38,8 +38,8 @@ class FA_BackspaceDetectingTextField: UITextField, UIKeyInput {
     // http://stackoverflow.com/a/25862878/9849
     // This method override should work
     func keyboardInputShouldDelete(textField: UITextField) -> Bool {
-        var shouldDelete = true
-        if textField.text.isEmpty {
+        let shouldDelete = true
+        if textField.text?.isEmpty ?? true {
             self.deleteBackward()
         }
     

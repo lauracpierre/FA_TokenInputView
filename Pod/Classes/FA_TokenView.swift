@@ -64,7 +64,7 @@ class FA_TokenView: UIView {
         
         // Configure for the token, unselected shows "[displayText]," and selected is "[displayText]"
         let labelString = "\(self.displayText),"
-        var attrString = NSMutableAttributedString(string: labelString, attributes: [
+        let attrString = NSMutableAttributedString(string: labelString, attributes: [
                 NSFontAttributeName : self.label.font,
                 NSForegroundColorAttributeName : UIColor.lightGrayColor()
             ])
@@ -83,7 +83,8 @@ class FA_TokenView: UIView {
 
     }
 
-    required init(coder aDecoder: NSCoder) {
+
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -134,12 +135,12 @@ class FA_TokenView: UIView {
     }
     
     func setTintColor(color theColor: UIColor) {
-        if let tint = self.tintColor {
+        if self.tintColor != nil {
             super.tintColor = theColor
         }
         self.label.textColor = tintColor
         self.selectedBackgroundView.backgroundColor = tintColor
-        var attrString: AnyObject = self.label.attributedText.mutableCopy()
+        let attrString: AnyObject = self.label.attributedText!.mutableCopy()
         let labelString = "\(self.displayText),"
         let tintRange = (labelString as NSString).rangeOfString(self.displayText)
         // Make the overall text color gray
