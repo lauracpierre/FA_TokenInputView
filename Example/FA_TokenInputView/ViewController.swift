@@ -92,6 +92,13 @@ class ViewController: UIViewController {
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[cc]|", options: .DirectionLeftToRight, metrics: nil, views: views))
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[b1]-[b2]-|", options: .AlignAllCenterY, metrics: nil, views: views))
         
+        let view = UIView(frame: CGRectMake(0, 0, 200, 45))
+        view.backgroundColor = UIColor.redColor()
+        
+        self.toField.setInputAccessoryView(view)
+        self.ccField.setInputAccessoryView(view)
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     

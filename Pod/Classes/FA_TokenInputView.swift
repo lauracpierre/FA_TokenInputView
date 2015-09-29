@@ -189,6 +189,10 @@ public class FA_TokenInputView: UIView {
         }
     }
     
+    public func setInputAccessoryView(view: UIView) {
+        self.textField.inputAccessoryView = view
+    }
+    
     private func removeTokenAtIndex(index: Int) {
         let tokenView = self.tokenViews[index]
         tokenView.removeFromSuperview()
