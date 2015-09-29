@@ -7,153 +7,111 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0174876E4805C4057128673B /* FA_Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF40D356B34ADBEED9F725A /* FA_Token.swift */; };
-		0E1AF63F113B023E87A0B1C5 /* FA_TokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3966FFBF8B708E168B6E7739 /* FA_TokenView.swift */; };
-		1293A6C0468A36D48F9FF3F5 /* Pods-FA_TokenInputView_Example-FA_TokenInputView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 531586F33D1A76DE416254E4 /* Pods-FA_TokenInputView_Example-FA_TokenInputView-dummy.m */; };
-		15B393974F56FFC86AA70AAA /* Pods-FA_TokenInputView_Tests-FA_TokenInputView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F1877570372213F50DFDDD91 /* Pods-FA_TokenInputView_Tests-FA_TokenInputView-dummy.m */; };
-		17F0371BFCE10EBEF3469924 /* FA_TokenInputView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4C491CE74448744624B57B2F /* FA_TokenInputView.bundle */; };
-		30BB2C78676413028B029B7B /* Pods-FA_TokenInputView_Example-FA_TokenInputView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CF97D5B723EEEB4D8F9AD21 /* Pods-FA_TokenInputView_Example-FA_TokenInputView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		408BE2A21D472E2878FF07DA /* Pods-FA_TokenInputView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 24A72A23C0B89C6FF14571D2 /* Pods-FA_TokenInputView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4A7A4B816424ACB5488E3229 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEAC1310F8801E323A921C8B /* Foundation.framework */; };
-		65B1E4E5CEB4404896127FCA /* Pods-FA_TokenInputView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED57751250521D827146367 /* Pods-FA_TokenInputView_Example-dummy.m */; };
-		680276BAA63E65D33447CAF0 /* FA_TokenInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4F02532BD341889CA6AD41 /* FA_TokenInputView.swift */; };
-		6AE8286647F17F2AB8B339C8 /* FA_BackspaceDetectingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19CDF017FF08E34FA649B83 /* FA_BackspaceDetectingTextField.swift */; };
-		7CA91151D2C8B3813E6396C6 /* Pods-FA_TokenInputView_Tests-FA_TokenInputView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AF11123CB2853DD8F9464A1 /* Pods-FA_TokenInputView_Tests-FA_TokenInputView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		85BCE3836D22CF22C7A3F082 /* FA_Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF40D356B34ADBEED9F725A /* FA_Token.swift */; };
-		876AE740309D58EEEB55AE4E /* Pods-FA_TokenInputView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 59A6E12B6E92CC5DE7574B89 /* Pods-FA_TokenInputView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		99EBABD613CFB247C6F3EA1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEAC1310F8801E323A921C8B /* Foundation.framework */; };
-		9F04C9AF463B6EAA53F30629 /* FA_TokenInputView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5B4DAAD14E98D6E93EF3C964 /* FA_TokenInputView.bundle */; };
-		A73E0B3935A2FC8A103CD557 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEAC1310F8801E323A921C8B /* Foundation.framework */; };
-		ADE9FFCFD4D9EB12D8E959B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEAC1310F8801E323A921C8B /* Foundation.framework */; };
-		B712080B67739FE06F0E221C /* Pods-FA_TokenInputView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F8D14911CD2C6EEE65888E /* Pods-FA_TokenInputView_Tests-dummy.m */; };
-		CA0D37BBE287C570267656E4 /* FA_BackspaceDetectingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19CDF017FF08E34FA649B83 /* FA_BackspaceDetectingTextField.swift */; };
-		D6E09859DA7CD0C8AF6938A0 /* FA_TokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3966FFBF8B708E168B6E7739 /* FA_TokenView.swift */; };
-		EFCE565EC6D012673B747F5C /* FA_TokenInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4F02532BD341889CA6AD41 /* FA_TokenInputView.swift */; };
+		051BB02A1628B6B10511EFDE049E3F2E /* FA_TokenInputView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 45301078CA478DA2A6C2DD1EEBCE9861 /* FA_TokenInputView-dummy.m */; };
+		181BD1E1FF9A9181257A504726A3C751 /* FA_TokenInputView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C7C1BFDB9B30019DB5DA6F036749CA1 /* FA_TokenInputView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		205723DC19E12A943E07181487656359 /* FA_BackspaceDetectingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C63DCD4D21B23A52B68091135F5B453 /* FA_BackspaceDetectingTextField.swift */; };
+		212F44B95122D1A5AC6A5C14D7C962BC /* FA_TokenInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2938C9C96A33B66517D261B4D486FB /* FA_TokenInputView.swift */; };
+		2AB4C8D21973E89ACF9B1FF2EB7004F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91F87D25DF965FB6654744EEA7E50E6E /* Foundation.framework */; };
+		2F3DA88ED40ADDEDB5E6783BAEABE437 /* FA_TokenInputView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 129E78C34367EDF452E614FE513581C6 /* FA_TokenInputView.bundle */; };
+		3B7747EAFA567CD1FC799093ECC188E9 /* Pods-FA_TokenInputView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F7107B1A874D2478D9F3648EA0F52BF7 /* Pods-FA_TokenInputView_Example-dummy.m */; };
+		3EF49F98E433CB77652F7A18BC0EF5EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91F87D25DF965FB6654744EEA7E50E6E /* Foundation.framework */; };
+		53A09A9B450EB64C66A72A1AF0564DA7 /* Pods-FA_TokenInputView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B3000B54474CE8CABDC871D82747F9E4 /* Pods-FA_TokenInputView_Tests-dummy.m */; };
+		7CEA8DCCE18DB54449EDB4E28E6C6C19 /* FA_Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C382A6D0D32A7255664FEEDC2F29EF /* FA_Token.swift */; };
+		A1989E959220358C26C95D4C3CB9190B /* FA_TokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E25AF4995D360630547B1CD6AA460E4 /* FA_TokenView.swift */; };
+		A544B6EF68C000CC08A6967E37453B68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91F87D25DF965FB6654744EEA7E50E6E /* Foundation.framework */; };
+		ECA9A6A7CB8A1AE76B70C178F8FE6355 /* Pods-FA_TokenInputView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C937D923E6343110AFA2F7323F4C7886 /* Pods-FA_TokenInputView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F450F81838DAE7F093270E464388B87D /* Pods-FA_TokenInputView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 153C65C06934B81BE9895B3289D81ED3 /* Pods-FA_TokenInputView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		141BE3ADD61D829B34E95B60 /* PBXContainerItemProxy */ = {
+		3B8E18ACA41472A8D20F68E3A4A315D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 012B7BDDF252A146F857AA3E /* Project object */;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 44B59CB0EE05631AC8ABF998;
-			remoteInfo = "Pods-FA_TokenInputView_Example-FA_TokenInputView";
+			remoteGlobalIDString = 1D6D6E7258741484D3B6E292D33318EA;
+			remoteInfo = "FA_TokenInputView-FA_TokenInputView";
 		};
-		2FB1ABE25D897617C90888E2 /* PBXContainerItemProxy */ = {
+		E0701104C74FB2E1CE90093C124AF504 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 012B7BDDF252A146F857AA3E /* Project object */;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D84D9288B714C1472BE53CB4;
-			remoteInfo = "Pods-FA_TokenInputView_Example-FA_TokenInputView-FA_TokenInputView";
+			remoteGlobalIDString = 885ED00D2C4E599400CF7B161C2DB7F6;
+			remoteInfo = FA_TokenInputView;
 		};
-		4308201059163BA995BA31A0 /* PBXContainerItemProxy */ = {
+		E0D38BC52CE4DA5F24935700F62024B8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 012B7BDDF252A146F857AA3E /* Project object */;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 90396CE322B69298EB2D623D;
-			remoteInfo = "Pods-FA_TokenInputView_Tests-FA_TokenInputView-FA_TokenInputView";
-		};
-		D4CE00CD733B47F552EFB178 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 012B7BDDF252A146F857AA3E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E7640862E65DE629B9A73743;
-			remoteInfo = "Pods-FA_TokenInputView_Tests-FA_TokenInputView";
+			remoteGlobalIDString = 885ED00D2C4E599400CF7B161C2DB7F6;
+			remoteInfo = FA_TokenInputView;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		106E3F1C66ED3B81C7CF0346 /* Pods-FA_TokenInputView_Example-FA_TokenInputView-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FA_TokenInputView_Example-FA_TokenInputView-Private.xcconfig"; sourceTree = "<group>"; };
-		1105C19794C6FC7CC481612A /* Pods-FA_TokenInputView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-FA_TokenInputView_Tests.modulemap"; sourceTree = "<group>"; };
-		138E793A237C69C2D01FC729 /* Pods-FA_TokenInputView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-FA_TokenInputView_Example.modulemap"; sourceTree = "<group>"; };
-		14CB097834C53DCFD32FD171 /* Pods-FA_TokenInputView_Example-FA_TokenInputView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FA_TokenInputView_Example-FA_TokenInputView.xcconfig"; sourceTree = "<group>"; };
-		151C3D4D1EB5EB0C2ED5F17E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		157024277BF78786E91A63F0 /* Pods-FA_TokenInputView_Example-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FA_TokenInputView_Example-environment.h"; sourceTree = "<group>"; };
-		165D3956355A5FE2A76A47AB /* Pods-FA_TokenInputView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FA_TokenInputView_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		22EC63586D414479DC6377A2 /* FA_TokenInputView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FA_TokenInputView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		24A72A23C0B89C6FF14571D2 /* Pods-FA_TokenInputView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FA_TokenInputView_Example-umbrella.h"; sourceTree = "<group>"; };
-		2D3796E7C4EF8382446A834B /* Pods-FA_TokenInputView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FA_TokenInputView_Example-frameworks.sh"; sourceTree = "<group>"; };
-		34C0EEDB438BE9E5E6796CF9 /* Pods-FA_TokenInputView_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FA_TokenInputView_Tests-resources.sh"; sourceTree = "<group>"; };
-		3966FFBF8B708E168B6E7739 /* FA_TokenView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FA_TokenView.swift; sourceTree = "<group>"; };
-		3B9561089EE24CD255E01C22 /* Pods-FA_TokenInputView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FA_TokenInputView_Example.release.xcconfig"; sourceTree = "<group>"; };
-		3C96FB2E6BA2EF81362B876D /* Pods_FA_TokenInputView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FA_TokenInputView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3ED57751250521D827146367 /* Pods-FA_TokenInputView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FA_TokenInputView_Example-dummy.m"; sourceTree = "<group>"; };
-		46A58604559A88552F149437 /* Pods-FA_TokenInputView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FA_TokenInputView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		4806C49004E25BC4624E77D9 /* Pods-FA_TokenInputView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FA_TokenInputView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		4AF11123CB2853DD8F9464A1 /* Pods-FA_TokenInputView_Tests-FA_TokenInputView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-FA_TokenInputView_Tests-FA_TokenInputView-umbrella.h"; path = "../Pods-FA_TokenInputView_Tests-FA_TokenInputView/Pods-FA_TokenInputView_Tests-FA_TokenInputView-umbrella.h"; sourceTree = "<group>"; };
-		4C491CE74448744624B57B2F /* FA_TokenInputView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FA_TokenInputView.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C545EA14AC2D845F583E4C8 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		531586F33D1A76DE416254E4 /* Pods-FA_TokenInputView_Example-FA_TokenInputView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FA_TokenInputView_Example-FA_TokenInputView-dummy.m"; sourceTree = "<group>"; };
-		570F89F604B3BC7F8236F15F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Pods-FA_TokenInputView_Tests-FA_TokenInputView/Info.plist"; sourceTree = "<group>"; };
-		591378A9874C3EB171C1520A /* Pods-FA_TokenInputView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FA_TokenInputView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		59A6E12B6E92CC5DE7574B89 /* Pods-FA_TokenInputView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FA_TokenInputView_Tests-umbrella.h"; sourceTree = "<group>"; };
-		5B4DAAD14E98D6E93EF3C964 /* FA_TokenInputView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FA_TokenInputView.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E4F02532BD341889CA6AD41 /* FA_TokenInputView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FA_TokenInputView.swift; sourceTree = "<group>"; };
-		7321DC1C997045EA450776C7 /* Pods-FA_TokenInputView_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FA_TokenInputView_Example-resources.sh"; sourceTree = "<group>"; };
-		766E91EEE02D344B44FE887C /* Pods-FA_TokenInputView_Tests-FA_TokenInputView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FA_TokenInputView_Tests-FA_TokenInputView.xcconfig"; path = "../Pods-FA_TokenInputView_Tests-FA_TokenInputView/Pods-FA_TokenInputView_Tests-FA_TokenInputView.xcconfig"; sourceTree = "<group>"; };
-		7AB52BFA271ADB2714363E4F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7CF97D5B723EEEB4D8F9AD21 /* Pods-FA_TokenInputView_Example-FA_TokenInputView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FA_TokenInputView_Example-FA_TokenInputView-umbrella.h"; sourceTree = "<group>"; };
-		7FF28A5B6EF6E550B938908C /* Pods-FA_TokenInputView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FA_TokenInputView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		8224BA17D07E20DCB9E55D03 /* FA_TokenInputView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FA_TokenInputView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C71C4E5A3CCD21E973C6CC4 /* Pods-FA_TokenInputView_Tests-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FA_TokenInputView_Tests-environment.h"; sourceTree = "<group>"; };
-		A886A28A89B99DC5C2AD5992 /* Pods-FA_TokenInputView_Tests-FA_TokenInputView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-FA_TokenInputView_Tests-FA_TokenInputView-prefix.pch"; path = "../Pods-FA_TokenInputView_Tests-FA_TokenInputView/Pods-FA_TokenInputView_Tests-FA_TokenInputView-prefix.pch"; sourceTree = "<group>"; };
-		B0FAF3FECF62260E8B096A2D /* Pods-FA_TokenInputView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FA_TokenInputView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B19CDF017FF08E34FA649B83 /* FA_BackspaceDetectingTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FA_BackspaceDetectingTextField.swift; sourceTree = "<group>"; };
-		B3C9A0E6B82B210F6BC3EC5F /* Pods-FA_TokenInputView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FA_TokenInputView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B3F8D14911CD2C6EEE65888E /* Pods-FA_TokenInputView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FA_TokenInputView_Tests-dummy.m"; sourceTree = "<group>"; };
-		B5977FC0EB23B9C423C7B290 /* Pods-FA_TokenInputView_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FA_TokenInputView_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		C4EE2940EC77CAE3F762ED1D /* Pods_FA_TokenInputView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FA_TokenInputView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE0BC02CBF5668409E1CB1C2 /* Pods-FA_TokenInputView_Example-FA_TokenInputView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FA_TokenInputView_Example-FA_TokenInputView-prefix.pch"; sourceTree = "<group>"; };
-		D1A5AD9D38E82EDCBCBB1EC4 /* Pods-FA_TokenInputView_Tests-FA_TokenInputView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "Pods-FA_TokenInputView_Tests-FA_TokenInputView.modulemap"; path = "../Pods-FA_TokenInputView_Tests-FA_TokenInputView/Pods-FA_TokenInputView_Tests-FA_TokenInputView.modulemap"; sourceTree = "<group>"; };
-		DA9D5DC802DF2D292041F41F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DBFBC5AAA234A58597112DF9 /* Pods-FA_TokenInputView_Tests-FA_TokenInputView-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FA_TokenInputView_Tests-FA_TokenInputView-Private.xcconfig"; path = "../Pods-FA_TokenInputView_Tests-FA_TokenInputView/Pods-FA_TokenInputView_Tests-FA_TokenInputView-Private.xcconfig"; sourceTree = "<group>"; };
-		DEAC1310F8801E323A921C8B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		E9F45426604F084997F993AC /* Pods-FA_TokenInputView_Example-FA_TokenInputView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-FA_TokenInputView_Example-FA_TokenInputView.modulemap"; sourceTree = "<group>"; };
-		ECF40D356B34ADBEED9F725A /* FA_Token.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FA_Token.swift; sourceTree = "<group>"; };
-		F1877570372213F50DFDDD91 /* Pods-FA_TokenInputView_Tests-FA_TokenInputView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-FA_TokenInputView_Tests-FA_TokenInputView-dummy.m"; path = "../Pods-FA_TokenInputView_Tests-FA_TokenInputView/Pods-FA_TokenInputView_Tests-FA_TokenInputView-dummy.m"; sourceTree = "<group>"; };
+		04F4C2580291F43997842317292DC1DB /* Pods-FA_TokenInputView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FA_TokenInputView_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		09C70986F9F9E5826253DD6EC5B0171D /* FA_TokenInputView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FA_TokenInputView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		129E78C34367EDF452E614FE513581C6 /* FA_TokenInputView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FA_TokenInputView.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		153C65C06934B81BE9895B3289D81ED3 /* Pods-FA_TokenInputView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FA_TokenInputView_Tests-umbrella.h"; sourceTree = "<group>"; };
+		18C39EF8830E242902B3015973A7D856 /* FA_TokenInputView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FA_TokenInputView-prefix.pch"; sourceTree = "<group>"; };
+		1C7C1BFDB9B30019DB5DA6F036749CA1 /* FA_TokenInputView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FA_TokenInputView-umbrella.h"; sourceTree = "<group>"; };
+		21ABF81BFCF6E14DE0A415C003EE62FB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21D029C2AB3AC508CD83F082C0072300 /* Pods-FA_TokenInputView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FA_TokenInputView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		224D6CABE1AF2FA81D8E79664DE54052 /* Pods-FA_TokenInputView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FA_TokenInputView_Example-frameworks.sh"; sourceTree = "<group>"; };
+		2B38C0E5C046896E2FF3269FB877DB18 /* Pods-FA_TokenInputView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FA_TokenInputView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		347A711245CC4A8374EACC57D452366D /* Pods-FA_TokenInputView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FA_TokenInputView_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		384A8ED4E144BA84E57ABD94ED7ED51D /* Pods-FA_TokenInputView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FA_TokenInputView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		39C382A6D0D32A7255664FEEDC2F29EF /* FA_Token.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FA_Token.swift; sourceTree = "<group>"; };
+		3AF3128C774DC1261B79A4BF7AE50809 /* Pods-FA_TokenInputView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FA_TokenInputView_Example.release.xcconfig"; sourceTree = "<group>"; };
+		3B708A377636877206C01C8096262177 /* Pods-FA_TokenInputView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-FA_TokenInputView_Tests.modulemap"; sourceTree = "<group>"; };
+		448867FDC2A03D9C6C16A66D6C602AFF /* FA_TokenInputView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FA_TokenInputView.xcconfig; sourceTree = "<group>"; };
+		45301078CA478DA2A6C2DD1EEBCE9861 /* FA_TokenInputView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FA_TokenInputView-dummy.m"; sourceTree = "<group>"; };
+		57EA4C76923701FEA1B33FD3E563F00A /* Pods_FA_TokenInputView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FA_TokenInputView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E25AF4995D360630547B1CD6AA460E4 /* FA_TokenView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FA_TokenView.swift; sourceTree = "<group>"; };
+		6685B33D99E17446F9CD39D1126FA416 /* Pods_FA_TokenInputView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FA_TokenInputView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B2938C9C96A33B66517D261B4D486FB /* FA_TokenInputView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FA_TokenInputView.swift; sourceTree = "<group>"; };
+		77ECDECE8D662B19B4985DA8188DE080 /* Pods-FA_TokenInputView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-FA_TokenInputView_Example.modulemap"; sourceTree = "<group>"; };
+		7C63DCD4D21B23A52B68091135F5B453 /* FA_BackspaceDetectingTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FA_BackspaceDetectingTextField.swift; sourceTree = "<group>"; };
+		8E650C19CD3AFF12A0EF1E72D1B847DC /* FA_TokenInputView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FA_TokenInputView.modulemap; sourceTree = "<group>"; };
+		91F87D25DF965FB6654744EEA7E50E6E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		AA4AF9CF83430661219CFDF31B8D25B2 /* Pods-FA_TokenInputView_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FA_TokenInputView_Tests-resources.sh"; sourceTree = "<group>"; };
+		AB3BA8BCC156F0D5CBC1F1358A8A9B5B /* Pods-FA_TokenInputView_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FA_TokenInputView_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		B3000B54474CE8CABDC871D82747F9E4 /* Pods-FA_TokenInputView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FA_TokenInputView_Tests-dummy.m"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BEE718036ECDF28F270AE513BCD65C65 /* Pods-FA_TokenInputView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FA_TokenInputView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C26EB6B4D39A7E5551A5C18551B789F2 /* Pods-FA_TokenInputView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FA_TokenInputView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C937D923E6343110AFA2F7323F4C7886 /* Pods-FA_TokenInputView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FA_TokenInputView_Example-umbrella.h"; sourceTree = "<group>"; };
+		D9158A2972C188715959C6376778A105 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF22909A841790F6868CE9AF824B5300 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F11DD2BFEA831D1253DED59A277BF065 /* Pods-FA_TokenInputView_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FA_TokenInputView_Example-resources.sh"; sourceTree = "<group>"; };
+		F7107B1A874D2478D9F3648EA0F52BF7 /* Pods-FA_TokenInputView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FA_TokenInputView_Example-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		228A3A8365EB0D56C4D47083 /* Frameworks */ = {
+		4009B26D476269E0CD38F58681A40E46 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADE9FFCFD4D9EB12D8E959B1 /* Foundation.framework in Frameworks */,
+				3EF49F98E433CB77652F7A18BC0EF5EE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		391B0AE2E9A38EC198B39DFA /* Frameworks */ = {
+		409EB9BB381CF1B7E8368CC92541A94B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A7A4B816424ACB5488E3229 /* Foundation.framework in Frameworks */,
+				A544B6EF68C000CC08A6967E37453B68 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4BE2AF972572CC4E9427D5CE /* Frameworks */ = {
+		5768E710A52E7349D4ADB88843F2AD72 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A73E0B3935A2FC8A103CD557 /* Foundation.framework in Frameworks */,
+				2AB4C8D21973E89ACF9B1FF2EB7004F9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AAAEA1361DAB42AB8205C8E8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				99EBABD613CFB247C6F3EA1E /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F275E2718328FBE3B2854E03 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F315E30EF94E79D59BB45D22 /* Frameworks */ = {
+		BF45CB1D7BFBFBEE5B8B8D55FF4DEED0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -163,355 +121,281 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1FDB94A0F3CBA592EAA05741 /* iOS */ = {
+		013BAF69896B5ED6A09F9F2A58EF2615 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DEAC1310F8801E323A921C8B /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		22BEC7AE74415BF036AD12C3 /* Pods-FA_TokenInputView_Tests */ = {
-			isa = PBXGroup;
-			children = (
-				7AB52BFA271ADB2714363E4F /* Info.plist */,
-				1105C19794C6FC7CC481612A /* Pods-FA_TokenInputView_Tests.modulemap */,
-				B3C9A0E6B82B210F6BC3EC5F /* Pods-FA_TokenInputView_Tests-acknowledgements.markdown */,
-				591378A9874C3EB171C1520A /* Pods-FA_TokenInputView_Tests-acknowledgements.plist */,
-				B3F8D14911CD2C6EEE65888E /* Pods-FA_TokenInputView_Tests-dummy.m */,
-				8C71C4E5A3CCD21E973C6CC4 /* Pods-FA_TokenInputView_Tests-environment.h */,
-				B5977FC0EB23B9C423C7B290 /* Pods-FA_TokenInputView_Tests-frameworks.sh */,
-				34C0EEDB438BE9E5E6796CF9 /* Pods-FA_TokenInputView_Tests-resources.sh */,
-				59A6E12B6E92CC5DE7574B89 /* Pods-FA_TokenInputView_Tests-umbrella.h */,
-				7FF28A5B6EF6E550B938908C /* Pods-FA_TokenInputView_Tests.debug.xcconfig */,
-				165D3956355A5FE2A76A47AB /* Pods-FA_TokenInputView_Tests.release.xcconfig */,
-			);
-			name = "Pods-FA_TokenInputView_Tests";
-			path = "Target Support Files/Pods-FA_TokenInputView_Tests";
-			sourceTree = "<group>";
-		};
-		3EEDEC55D9257BF295B6CEC5 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				E03D09C1AC61CF834EACE030 /* Classes */,
-			);
-			path = Pod;
-			sourceTree = "<group>";
-		};
-		402B6973F26600B4FAC5FDAA /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6914C585401D96A5373BB7F7 /* FA_TokenInputView */,
+				2DF7893D5B366E08687B62D9EDF7AE2B /* FA_TokenInputView */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		5347E6A1B8614AA3292D0276 = {
+		2DF7893D5B366E08687B62D9EDF7AE2B /* FA_TokenInputView */ = {
 			isa = PBXGroup;
 			children = (
-				4C545EA14AC2D845F583E4C8 /* Podfile */,
-				402B6973F26600B4FAC5FDAA /* Development Pods */,
-				D1698E16C379DA2C692F36B1 /* Frameworks */,
-				7F79DCA5432856A66413075B /* Products */,
-				D06545647EECA501AFE9AA80 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		6207D66398CD12770D6DC11F /* Pods-FA_TokenInputView_Example */ = {
-			isa = PBXGroup;
-			children = (
-				151C3D4D1EB5EB0C2ED5F17E /* Info.plist */,
-				138E793A237C69C2D01FC729 /* Pods-FA_TokenInputView_Example.modulemap */,
-				B0FAF3FECF62260E8B096A2D /* Pods-FA_TokenInputView_Example-acknowledgements.markdown */,
-				4806C49004E25BC4624E77D9 /* Pods-FA_TokenInputView_Example-acknowledgements.plist */,
-				3ED57751250521D827146367 /* Pods-FA_TokenInputView_Example-dummy.m */,
-				157024277BF78786E91A63F0 /* Pods-FA_TokenInputView_Example-environment.h */,
-				2D3796E7C4EF8382446A834B /* Pods-FA_TokenInputView_Example-frameworks.sh */,
-				7321DC1C997045EA450776C7 /* Pods-FA_TokenInputView_Example-resources.sh */,
-				24A72A23C0B89C6FF14571D2 /* Pods-FA_TokenInputView_Example-umbrella.h */,
-				46A58604559A88552F149437 /* Pods-FA_TokenInputView_Example.debug.xcconfig */,
-				3B9561089EE24CD255E01C22 /* Pods-FA_TokenInputView_Example.release.xcconfig */,
-			);
-			name = "Pods-FA_TokenInputView_Example";
-			path = "Target Support Files/Pods-FA_TokenInputView_Example";
-			sourceTree = "<group>";
-		};
-		6914C585401D96A5373BB7F7 /* FA_TokenInputView */ = {
-			isa = PBXGroup;
-			children = (
-				3EEDEC55D9257BF295B6CEC5 /* Pod */,
-				BFCC47D9D4901D6B9B8A78CF /* Support Files */,
+				8577BBC9AE97007A73E157F2D3D8C11E /* Pod */,
+				C74C3849B4C8F2A6727E0B49A44B7D1A /* Support Files */,
 			);
 			name = FA_TokenInputView;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		7F79DCA5432856A66413075B /* Products */ = {
+		3B61EE2421B824D219639508A3124ECF /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				4C491CE74448744624B57B2F /* FA_TokenInputView.bundle */,
-				5B4DAAD14E98D6E93EF3C964 /* FA_TokenInputView.bundle */,
-				22EC63586D414479DC6377A2 /* FA_TokenInputView.framework */,
-				8224BA17D07E20DCB9E55D03 /* FA_TokenInputView.framework */,
-				C4EE2940EC77CAE3F762ED1D /* Pods_FA_TokenInputView_Example.framework */,
-				3C96FB2E6BA2EF81362B876D /* Pods_FA_TokenInputView_Tests.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		BFCC47D9D4901D6B9B8A78CF /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				DA9D5DC802DF2D292041F41F /* Info.plist */,
-				570F89F604B3BC7F8236F15F /* Info.plist */,
-				E9F45426604F084997F993AC /* Pods-FA_TokenInputView_Example-FA_TokenInputView.modulemap */,
-				14CB097834C53DCFD32FD171 /* Pods-FA_TokenInputView_Example-FA_TokenInputView.xcconfig */,
-				106E3F1C66ED3B81C7CF0346 /* Pods-FA_TokenInputView_Example-FA_TokenInputView-Private.xcconfig */,
-				531586F33D1A76DE416254E4 /* Pods-FA_TokenInputView_Example-FA_TokenInputView-dummy.m */,
-				CE0BC02CBF5668409E1CB1C2 /* Pods-FA_TokenInputView_Example-FA_TokenInputView-prefix.pch */,
-				7CF97D5B723EEEB4D8F9AD21 /* Pods-FA_TokenInputView_Example-FA_TokenInputView-umbrella.h */,
-				D1A5AD9D38E82EDCBCBB1EC4 /* Pods-FA_TokenInputView_Tests-FA_TokenInputView.modulemap */,
-				766E91EEE02D344B44FE887C /* Pods-FA_TokenInputView_Tests-FA_TokenInputView.xcconfig */,
-				DBFBC5AAA234A58597112DF9 /* Pods-FA_TokenInputView_Tests-FA_TokenInputView-Private.xcconfig */,
-				F1877570372213F50DFDDD91 /* Pods-FA_TokenInputView_Tests-FA_TokenInputView-dummy.m */,
-				A886A28A89B99DC5C2AD5992 /* Pods-FA_TokenInputView_Tests-FA_TokenInputView-prefix.pch */,
-				4AF11123CB2853DD8F9464A1 /* Pods-FA_TokenInputView_Tests-FA_TokenInputView-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/Pods-FA_TokenInputView_Example-FA_TokenInputView";
-			sourceTree = "<group>";
-		};
-		D06545647EECA501AFE9AA80 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				6207D66398CD12770D6DC11F /* Pods-FA_TokenInputView_Example */,
-				22BEC7AE74415BF036AD12C3 /* Pods-FA_TokenInputView_Tests */,
+				66142CADBA2458F0367D395502514CFB /* Pods-FA_TokenInputView_Example */,
+				5000781E912F5465070A895C4A9D8C44 /* Pods-FA_TokenInputView_Tests */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		D1698E16C379DA2C692F36B1 /* Frameworks */ = {
+		5000781E912F5465070A895C4A9D8C44 /* Pods-FA_TokenInputView_Tests */ = {
 			isa = PBXGroup;
 			children = (
-				1FDB94A0F3CBA592EAA05741 /* iOS */,
+				21ABF81BFCF6E14DE0A415C003EE62FB /* Info.plist */,
+				3B708A377636877206C01C8096262177 /* Pods-FA_TokenInputView_Tests.modulemap */,
+				C26EB6B4D39A7E5551A5C18551B789F2 /* Pods-FA_TokenInputView_Tests-acknowledgements.markdown */,
+				384A8ED4E144BA84E57ABD94ED7ED51D /* Pods-FA_TokenInputView_Tests-acknowledgements.plist */,
+				B3000B54474CE8CABDC871D82747F9E4 /* Pods-FA_TokenInputView_Tests-dummy.m */,
+				AB3BA8BCC156F0D5CBC1F1358A8A9B5B /* Pods-FA_TokenInputView_Tests-frameworks.sh */,
+				AA4AF9CF83430661219CFDF31B8D25B2 /* Pods-FA_TokenInputView_Tests-resources.sh */,
+				153C65C06934B81BE9895B3289D81ED3 /* Pods-FA_TokenInputView_Tests-umbrella.h */,
+				21D029C2AB3AC508CD83F082C0072300 /* Pods-FA_TokenInputView_Tests.debug.xcconfig */,
+				347A711245CC4A8374EACC57D452366D /* Pods-FA_TokenInputView_Tests.release.xcconfig */,
+			);
+			name = "Pods-FA_TokenInputView_Tests";
+			path = "Target Support Files/Pods-FA_TokenInputView_Tests";
+			sourceTree = "<group>";
+		};
+		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				91F87D25DF965FB6654744EEA7E50E6E /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		66142CADBA2458F0367D395502514CFB /* Pods-FA_TokenInputView_Example */ = {
+			isa = PBXGroup;
+			children = (
+				DF22909A841790F6868CE9AF824B5300 /* Info.plist */,
+				77ECDECE8D662B19B4985DA8188DE080 /* Pods-FA_TokenInputView_Example.modulemap */,
+				BEE718036ECDF28F270AE513BCD65C65 /* Pods-FA_TokenInputView_Example-acknowledgements.markdown */,
+				2B38C0E5C046896E2FF3269FB877DB18 /* Pods-FA_TokenInputView_Example-acknowledgements.plist */,
+				F7107B1A874D2478D9F3648EA0F52BF7 /* Pods-FA_TokenInputView_Example-dummy.m */,
+				224D6CABE1AF2FA81D8E79664DE54052 /* Pods-FA_TokenInputView_Example-frameworks.sh */,
+				F11DD2BFEA831D1253DED59A277BF065 /* Pods-FA_TokenInputView_Example-resources.sh */,
+				C937D923E6343110AFA2F7323F4C7886 /* Pods-FA_TokenInputView_Example-umbrella.h */,
+				04F4C2580291F43997842317292DC1DB /* Pods-FA_TokenInputView_Example.debug.xcconfig */,
+				3AF3128C774DC1261B79A4BF7AE50809 /* Pods-FA_TokenInputView_Example.release.xcconfig */,
+			);
+			name = "Pods-FA_TokenInputView_Example";
+			path = "Target Support Files/Pods-FA_TokenInputView_Example";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				013BAF69896B5ED6A09F9F2A58EF2615 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				B9EC35F882C9E10526B28069972049C3 /* Products */,
+				3B61EE2421B824D219639508A3124ECF /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8577BBC9AE97007A73E157F2D3D8C11E /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				8F826B15E533FA589F969E1322D6F429 /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		8F826B15E533FA589F969E1322D6F429 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7C63DCD4D21B23A52B68091135F5B453 /* FA_BackspaceDetectingTextField.swift */,
+				39C382A6D0D32A7255664FEEDC2F29EF /* FA_Token.swift */,
+				6B2938C9C96A33B66517D261B4D486FB /* FA_TokenInputView.swift */,
+				5E25AF4995D360630547B1CD6AA460E4 /* FA_TokenView.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		B9EC35F882C9E10526B28069972049C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				129E78C34367EDF452E614FE513581C6 /* FA_TokenInputView.bundle */,
+				09C70986F9F9E5826253DD6EC5B0171D /* FA_TokenInputView.framework */,
+				6685B33D99E17446F9CD39D1126FA416 /* Pods_FA_TokenInputView_Example.framework */,
+				57EA4C76923701FEA1B33FD3E563F00A /* Pods_FA_TokenInputView_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53F661C0CA7190D2CF05023FB33D61E4 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E03D09C1AC61CF834EACE030 /* Classes */ = {
+		C74C3849B4C8F2A6727E0B49A44B7D1A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				B19CDF017FF08E34FA649B83 /* FA_BackspaceDetectingTextField.swift */,
-				ECF40D356B34ADBEED9F725A /* FA_Token.swift */,
-				5E4F02532BD341889CA6AD41 /* FA_TokenInputView.swift */,
-				3966FFBF8B708E168B6E7739 /* FA_TokenView.swift */,
+				8E650C19CD3AFF12A0EF1E72D1B847DC /* FA_TokenInputView.modulemap */,
+				448867FDC2A03D9C6C16A66D6C602AFF /* FA_TokenInputView.xcconfig */,
+				45301078CA478DA2A6C2DD1EEBCE9861 /* FA_TokenInputView-dummy.m */,
+				18C39EF8830E242902B3015973A7D856 /* FA_TokenInputView-prefix.pch */,
+				1C7C1BFDB9B30019DB5DA6F036749CA1 /* FA_TokenInputView-umbrella.h */,
+				D9158A2972C188715959C6376778A105 /* Info.plist */,
 			);
-			path = Classes;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/FA_TokenInputView";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		30B85B3808842E7B509ECCFC /* Headers */ = {
+		1EDEDE2CF73D940F807A932D142B3596 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				876AE740309D58EEEB55AE4E /* Pods-FA_TokenInputView_Tests-umbrella.h in Headers */,
+				ECA9A6A7CB8A1AE76B70C178F8FE6355 /* Pods-FA_TokenInputView_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		69DFE163952CA7C6EA4F3B2F /* Headers */ = {
+		4CF0755874C2661EF9D6787F81D671B5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CA91151D2C8B3813E6396C6 /* Pods-FA_TokenInputView_Tests-FA_TokenInputView-umbrella.h in Headers */,
+				181BD1E1FF9A9181257A504726A3C751 /* FA_TokenInputView-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		82DF658DF134B2AB2A69D338 /* Headers */ = {
+		7F00568EF0CEA0B974D2F15835ED6C5A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30BB2C78676413028B029B7B /* Pods-FA_TokenInputView_Example-FA_TokenInputView-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DF014043F87E33EB4CA77D70 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				408BE2A21D472E2878FF07DA /* Pods-FA_TokenInputView_Example-umbrella.h in Headers */,
+				F450F81838DAE7F093270E464388B87D /* Pods-FA_TokenInputView_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		44B59CB0EE05631AC8ABF998 /* Pods-FA_TokenInputView_Example-FA_TokenInputView */ = {
+		1D6D6E7258741484D3B6E292D33318EA /* FA_TokenInputView-FA_TokenInputView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 948482A6CBCDE3178DE5D756 /* Build configuration list for PBXNativeTarget "Pods-FA_TokenInputView_Example-FA_TokenInputView" */;
+			buildConfigurationList = 8F5553B956A3B38BD8992D86165283E8 /* Build configuration list for PBXNativeTarget "FA_TokenInputView-FA_TokenInputView" */;
 			buildPhases = (
-				8D0E94B98056246E19EF8912 /* Sources */,
-				391B0AE2E9A38EC198B39DFA /* Frameworks */,
-				2DB9DF8D95A8AE416197E4E0 /* Resources */,
-				82DF658DF134B2AB2A69D338 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				06DC68922BAD9423DE08B9E5 /* PBXTargetDependency */,
-			);
-			name = "Pods-FA_TokenInputView_Example-FA_TokenInputView";
-			productName = "Pods-FA_TokenInputView_Example-FA_TokenInputView";
-			productReference = 22EC63586D414479DC6377A2 /* FA_TokenInputView.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		90396CE322B69298EB2D623D /* Pods-FA_TokenInputView_Tests-FA_TokenInputView-FA_TokenInputView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E3EEF711C13017600D024E0F /* Build configuration list for PBXNativeTarget "Pods-FA_TokenInputView_Tests-FA_TokenInputView-FA_TokenInputView" */;
-			buildPhases = (
-				806524419E12694E2A4C22C0 /* Sources */,
-				F275E2718328FBE3B2854E03 /* Frameworks */,
-				2722B5A0119694225938E8AC /* Resources */,
+				9A1FCD5ED209EA71A5C16C8090882089 /* Sources */,
+				BF45CB1D7BFBFBEE5B8B8D55FF4DEED0 /* Frameworks */,
+				774B400D06A943017D30E6B960E76386 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-FA_TokenInputView_Tests-FA_TokenInputView-FA_TokenInputView";
-			productName = "Pods-FA_TokenInputView_Tests-FA_TokenInputView-FA_TokenInputView";
-			productReference = 4C491CE74448744624B57B2F /* FA_TokenInputView.bundle */;
+			name = "FA_TokenInputView-FA_TokenInputView";
+			productName = "FA_TokenInputView-FA_TokenInputView";
+			productReference = 129E78C34367EDF452E614FE513581C6 /* FA_TokenInputView.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
-		98A289B1DBDA215AD7ED599B /* Pods-FA_TokenInputView_Tests */ = {
+		2F8EA7FBBF19506D3DC06F617806B0CC /* Pods-FA_TokenInputView_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1748A7755644A02B6CFDFF8B /* Build configuration list for PBXNativeTarget "Pods-FA_TokenInputView_Tests" */;
+			buildConfigurationList = CE404D6CA7748E81333008B8132FB5A5 /* Build configuration list for PBXNativeTarget "Pods-FA_TokenInputView_Tests" */;
 			buildPhases = (
-				7B0639E1111B80188AB8E4FD /* Sources */,
-				228A3A8365EB0D56C4D47083 /* Frameworks */,
-				30B85B3808842E7B509ECCFC /* Headers */,
+				D735DA623E67ADF74C72CDDEA0D24D19 /* Sources */,
+				5768E710A52E7349D4ADB88843F2AD72 /* Frameworks */,
+				7F00568EF0CEA0B974D2F15835ED6C5A /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				02C9D235BEF26B14FF23E7B2 /* PBXTargetDependency */,
+				7AC539104C27D98802DAA70345CACAAF /* PBXTargetDependency */,
 			);
 			name = "Pods-FA_TokenInputView_Tests";
 			productName = "Pods-FA_TokenInputView_Tests";
-			productReference = 3C96FB2E6BA2EF81362B876D /* Pods_FA_TokenInputView_Tests.framework */;
+			productReference = 57EA4C76923701FEA1B33FD3E563F00A /* Pods_FA_TokenInputView_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D84D9288B714C1472BE53CB4 /* Pods-FA_TokenInputView_Example-FA_TokenInputView-FA_TokenInputView */ = {
+		78BB1EA432BADAAEE5420493DF748806 /* Pods-FA_TokenInputView_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2073B15E2236760EE8E22BA5 /* Build configuration list for PBXNativeTarget "Pods-FA_TokenInputView_Example-FA_TokenInputView-FA_TokenInputView" */;
+			buildConfigurationList = E1393681E09FAB6F9338C5E542C2D6AF /* Build configuration list for PBXNativeTarget "Pods-FA_TokenInputView_Example" */;
 			buildPhases = (
-				AFCD8720E8E620609E37ECD8 /* Sources */,
-				F315E30EF94E79D59BB45D22 /* Frameworks */,
-				FEDFC016D7E397B339FFE237 /* Resources */,
+				D6A60E300CEBFBAD46BB5131F6ABA4A2 /* Sources */,
+				4009B26D476269E0CD38F58681A40E46 /* Frameworks */,
+				1EDEDE2CF73D940F807A932D142B3596 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = "Pods-FA_TokenInputView_Example-FA_TokenInputView-FA_TokenInputView";
-			productName = "Pods-FA_TokenInputView_Example-FA_TokenInputView-FA_TokenInputView";
-			productReference = 5B4DAAD14E98D6E93EF3C964 /* FA_TokenInputView.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
-		E7640862E65DE629B9A73743 /* Pods-FA_TokenInputView_Tests-FA_TokenInputView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 29808B2E9F3F30F25F8FC5D4 /* Build configuration list for PBXNativeTarget "Pods-FA_TokenInputView_Tests-FA_TokenInputView" */;
-			buildPhases = (
-				38D6A95DB40AEDA04B434B17 /* Sources */,
-				4BE2AF972572CC4E9427D5CE /* Frameworks */,
-				B7B302D951D33C2D4A5BAD08 /* Resources */,
-				69DFE163952CA7C6EA4F3B2F /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				534C698B57ACFA520AE045D6 /* PBXTargetDependency */,
-			);
-			name = "Pods-FA_TokenInputView_Tests-FA_TokenInputView";
-			productName = "Pods-FA_TokenInputView_Tests-FA_TokenInputView";
-			productReference = 8224BA17D07E20DCB9E55D03 /* FA_TokenInputView.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		ED6EB47012CD44BEE170B80C /* Pods-FA_TokenInputView_Example */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BD52DE288267D2B1C57D0BF3 /* Build configuration list for PBXNativeTarget "Pods-FA_TokenInputView_Example" */;
-			buildPhases = (
-				CBFAFA729F8521BB7E2ADE0A /* Sources */,
-				AAAEA1361DAB42AB8205C8E8 /* Frameworks */,
-				DF014043F87E33EB4CA77D70 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A6B63291F179DD263D2D837E /* PBXTargetDependency */,
+				5159443E50C834C5532ACF826854B207 /* PBXTargetDependency */,
 			);
 			name = "Pods-FA_TokenInputView_Example";
 			productName = "Pods-FA_TokenInputView_Example";
-			productReference = C4EE2940EC77CAE3F762ED1D /* Pods_FA_TokenInputView_Example.framework */;
+			productReference = 6685B33D99E17446F9CD39D1126FA416 /* Pods_FA_TokenInputView_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		885ED00D2C4E599400CF7B161C2DB7F6 /* FA_TokenInputView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3E619F0F5CE037E46785A3EFABABB40 /* Build configuration list for PBXNativeTarget "FA_TokenInputView" */;
+			buildPhases = (
+				C7294A7DCFA4DDC3DD182BC07A46458F /* Sources */,
+				409EB9BB381CF1B7E8368CC92541A94B /* Frameworks */,
+				479FAC1316FA07715EA860E1DF0AE15E /* Resources */,
+				4CF0755874C2661EF9D6787F81D671B5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				37B91D8AF2458DD41D02E3B6EB740F0C /* PBXTargetDependency */,
+			);
+			name = FA_TokenInputView;
+			productName = FA_TokenInputView;
+			productReference = 09C70986F9F9E5826253DD6EC5B0171D /* FA_TokenInputView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		012B7BDDF252A146F857AA3E /* Project object */ = {
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 			};
-			buildConfigurationList = 0479CFE1DAD9242248193584 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 5347E6A1B8614AA3292D0276;
-			productRefGroup = 7F79DCA5432856A66413075B /* Products */;
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = B9EC35F882C9E10526B28069972049C3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				ED6EB47012CD44BEE170B80C /* Pods-FA_TokenInputView_Example */,
-				44B59CB0EE05631AC8ABF998 /* Pods-FA_TokenInputView_Example-FA_TokenInputView */,
-				D84D9288B714C1472BE53CB4 /* Pods-FA_TokenInputView_Example-FA_TokenInputView-FA_TokenInputView */,
-				98A289B1DBDA215AD7ED599B /* Pods-FA_TokenInputView_Tests */,
-				E7640862E65DE629B9A73743 /* Pods-FA_TokenInputView_Tests-FA_TokenInputView */,
-				90396CE322B69298EB2D623D /* Pods-FA_TokenInputView_Tests-FA_TokenInputView-FA_TokenInputView */,
+				885ED00D2C4E599400CF7B161C2DB7F6 /* FA_TokenInputView */,
+				1D6D6E7258741484D3B6E292D33318EA /* FA_TokenInputView-FA_TokenInputView */,
+				78BB1EA432BADAAEE5420493DF748806 /* Pods-FA_TokenInputView_Example */,
+				2F8EA7FBBF19506D3DC06F617806B0CC /* Pods-FA_TokenInputView_Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2722B5A0119694225938E8AC /* Resources */ = {
+		479FAC1316FA07715EA860E1DF0AE15E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F3DA88ED40ADDEDB5E6783BAEABE437 /* FA_TokenInputView.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2DB9DF8D95A8AE416197E4E0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9F04C9AF463B6EAA53F30629 /* FA_TokenInputView.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B7B302D951D33C2D4A5BAD08 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				17F0371BFCE10EBEF3469924 /* FA_TokenInputView.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FEDFC016D7E397B339FFE237 /* Resources */ = {
+		774B400D06A943017D30E6B960E76386 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -521,93 +405,135 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		38D6A95DB40AEDA04B434B17 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6AE8286647F17F2AB8B339C8 /* FA_BackspaceDetectingTextField.swift in Sources */,
-				85BCE3836D22CF22C7A3F082 /* FA_Token.swift in Sources */,
-				EFCE565EC6D012673B747F5C /* FA_TokenInputView.swift in Sources */,
-				D6E09859DA7CD0C8AF6938A0 /* FA_TokenView.swift in Sources */,
-				15B393974F56FFC86AA70AAA /* Pods-FA_TokenInputView_Tests-FA_TokenInputView-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7B0639E1111B80188AB8E4FD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B712080B67739FE06F0E221C /* Pods-FA_TokenInputView_Tests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		806524419E12694E2A4C22C0 /* Sources */ = {
+		9A1FCD5ED209EA71A5C16C8090882089 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D0E94B98056246E19EF8912 /* Sources */ = {
+		C7294A7DCFA4DDC3DD182BC07A46458F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA0D37BBE287C570267656E4 /* FA_BackspaceDetectingTextField.swift in Sources */,
-				0174876E4805C4057128673B /* FA_Token.swift in Sources */,
-				680276BAA63E65D33447CAF0 /* FA_TokenInputView.swift in Sources */,
-				0E1AF63F113B023E87A0B1C5 /* FA_TokenView.swift in Sources */,
-				1293A6C0468A36D48F9FF3F5 /* Pods-FA_TokenInputView_Example-FA_TokenInputView-dummy.m in Sources */,
+				205723DC19E12A943E07181487656359 /* FA_BackspaceDetectingTextField.swift in Sources */,
+				7CEA8DCCE18DB54449EDB4E28E6C6C19 /* FA_Token.swift in Sources */,
+				051BB02A1628B6B10511EFDE049E3F2E /* FA_TokenInputView-dummy.m in Sources */,
+				212F44B95122D1A5AC6A5C14D7C962BC /* FA_TokenInputView.swift in Sources */,
+				A1989E959220358C26C95D4C3CB9190B /* FA_TokenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AFCD8720E8E620609E37ECD8 /* Sources */ = {
+		D6A60E300CEBFBAD46BB5131F6ABA4A2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B7747EAFA567CD1FC799093ECC188E9 /* Pods-FA_TokenInputView_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CBFAFA729F8521BB7E2ADE0A /* Sources */ = {
+		D735DA623E67ADF74C72CDDEA0D24D19 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65B1E4E5CEB4404896127FCA /* Pods-FA_TokenInputView_Example-dummy.m in Sources */,
+				53A09A9B450EB64C66A72A1AF0564DA7 /* Pods-FA_TokenInputView_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		02C9D235BEF26B14FF23E7B2 /* PBXTargetDependency */ = {
+		37B91D8AF2458DD41D02E3B6EB740F0C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Pods-FA_TokenInputView_Tests-FA_TokenInputView";
-			target = E7640862E65DE629B9A73743 /* Pods-FA_TokenInputView_Tests-FA_TokenInputView */;
-			targetProxy = D4CE00CD733B47F552EFB178 /* PBXContainerItemProxy */;
+			name = "FA_TokenInputView-FA_TokenInputView";
+			target = 1D6D6E7258741484D3B6E292D33318EA /* FA_TokenInputView-FA_TokenInputView */;
+			targetProxy = 3B8E18ACA41472A8D20F68E3A4A315D3 /* PBXContainerItemProxy */;
 		};
-		06DC68922BAD9423DE08B9E5 /* PBXTargetDependency */ = {
+		5159443E50C834C5532ACF826854B207 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Pods-FA_TokenInputView_Example-FA_TokenInputView-FA_TokenInputView";
-			target = D84D9288B714C1472BE53CB4 /* Pods-FA_TokenInputView_Example-FA_TokenInputView-FA_TokenInputView */;
-			targetProxy = 2FB1ABE25D897617C90888E2 /* PBXContainerItemProxy */;
+			name = FA_TokenInputView;
+			target = 885ED00D2C4E599400CF7B161C2DB7F6 /* FA_TokenInputView */;
+			targetProxy = E0701104C74FB2E1CE90093C124AF504 /* PBXContainerItemProxy */;
 		};
-		534C698B57ACFA520AE045D6 /* PBXTargetDependency */ = {
+		7AC539104C27D98802DAA70345CACAAF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Pods-FA_TokenInputView_Tests-FA_TokenInputView-FA_TokenInputView";
-			target = 90396CE322B69298EB2D623D /* Pods-FA_TokenInputView_Tests-FA_TokenInputView-FA_TokenInputView */;
-			targetProxy = 4308201059163BA995BA31A0 /* PBXContainerItemProxy */;
-		};
-		A6B63291F179DD263D2D837E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-FA_TokenInputView_Example-FA_TokenInputView";
-			target = 44B59CB0EE05631AC8ABF998 /* Pods-FA_TokenInputView_Example-FA_TokenInputView */;
-			targetProxy = 141BE3ADD61D829B34E95B60 /* PBXContainerItemProxy */;
+			name = FA_TokenInputView;
+			target = 885ED00D2C4E599400CF7B161C2DB7F6 /* FA_TokenInputView */;
+			targetProxy = E0D38BC52CE4DA5F24935700F62024B8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0176BC1FB60D4330ED9C0F31 /* Debug */ = {
+		14F5A02B8EEE5A9025B74DC48257DFF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46A58604559A88552F149437 /* Pods-FA_TokenInputView_Example.debug.xcconfig */;
+			baseConfigurationReference = 448867FDC2A03D9C6C16A66D6C602AFF /* FA_TokenInputView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.1.3;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 0.1.3;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FA_TokenInputView/FA_TokenInputView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FA_TokenInputView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FA_TokenInputView/FA_TokenInputView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = FA_TokenInputView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1823C5BB28F5998BAE7560E0BD6AB189 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 448867FDC2A03D9C6C16A66D6C602AFF /* FA_TokenInputView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.1.3;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 0.1.3;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FA_TokenInputView/FA_TokenInputView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FA_TokenInputView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FA_TokenInputView/FA_TokenInputView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = FA_TokenInputView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4E68B21A3704CFF86BF18D9539C20CC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 448867FDC2A03D9C6C16A66D6C602AFF /* FA_TokenInputView.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = FA_TokenInputView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		715A8FC4E772F2FE19C2FEC86D1BD827 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AF3128C774DC1261B79A4BF7AE50809 /* Pods-FA_TokenInputView_Example.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -618,27 +544,25 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-FA_TokenInputView_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Pods-FA_TokenInputView_Example/Pods-FA_TokenInputView_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Pods_FA_TokenInputView_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		3B14EAEFA0846AA4C831D717 /* Debug */ = {
+		71B6744BAE6B505B88B65EECF963D1D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7FF28A5B6EF6E550B938908C /* Pods-FA_TokenInputView_Tests.debug.xcconfig */;
+			baseConfigurationReference = 21D029C2AB3AC508CD83F082C0072300 /* Pods-FA_TokenInputView_Tests.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -649,14 +573,13 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-FA_TokenInputView_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Pods-FA_TokenInputView_Tests/Pods-FA_TokenInputView_Tests.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Pods_FA_TokenInputView_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -667,11 +590,49 @@
 			};
 			name = Debug;
 		};
-		4FED69A1B35FB3C6F2BAC95C /* Release */ = {
+		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 106E3F1C66ED3B81C7CF0346 /* Pods-FA_TokenInputView_Example-FA_TokenInputView-Private.xcconfig */;
 			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-FA_TokenInputView_Example";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		B1C7E487A88636B7E233425D2C538D82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 448867FDC2A03D9C6C16A66D6C602AFF /* FA_TokenInputView.xcconfig */;
+			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = FA_TokenInputView;
 				SDKROOT = iphoneos;
@@ -680,7 +641,66 @@
 			};
 			name = Release;
 		};
-		57281735421AFE55D4EF8FAD /* Release */ = {
+		B4C18049DE8BC800979C9181581521A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 347A711245CC4A8374EACC57D452366D /* Pods-FA_TokenInputView_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-FA_TokenInputView_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-FA_TokenInputView_Tests/Pods-FA_TokenInputView_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_FA_TokenInputView_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		ED91271E4926B10AD19372EED0C340D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04F4C2580291F43997842317292DC1DB /* Pods-FA_TokenInputView_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-FA_TokenInputView_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-FA_TokenInputView_Example/Pods-FA_TokenInputView_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_FA_TokenInputView_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -707,333 +727,62 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		5F2FA1DA11C1D5E2693370A8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				ONLY_ACTIVE_ARCH = YES;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
-		667FBD144C6F13C757A0B7F4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 106E3F1C66ED3B81C7CF0346 /* Pods-FA_TokenInputView_Example-FA_TokenInputView-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-FA_TokenInputView_Example-FA_TokenInputView/Pods-FA_TokenInputView_Example-FA_TokenInputView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-FA_TokenInputView_Example-FA_TokenInputView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-FA_TokenInputView_Example-FA_TokenInputView/Pods-FA_TokenInputView_Example-FA_TokenInputView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = FA_TokenInputView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		6FA15D44EC4E4A5830321D0C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B9561089EE24CD255E01C22 /* Pods-FA_TokenInputView_Example.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-FA_TokenInputView_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-FA_TokenInputView_Example/Pods-FA_TokenInputView_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_FA_TokenInputView_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		8239579EC1F8C4B967582EA3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBFBC5AAA234A58597112DF9 /* Pods-FA_TokenInputView_Tests-FA_TokenInputView-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-FA_TokenInputView_Tests-FA_TokenInputView/Pods-FA_TokenInputView_Tests-FA_TokenInputView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-FA_TokenInputView_Tests-FA_TokenInputView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-FA_TokenInputView_Tests-FA_TokenInputView/Pods-FA_TokenInputView_Tests-FA_TokenInputView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = FA_TokenInputView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		8C2C751527BD47A0B4641932 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 106E3F1C66ED3B81C7CF0346 /* Pods-FA_TokenInputView_Example-FA_TokenInputView-Private.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-FA_TokenInputView_Example";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = FA_TokenInputView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		9D8E94A334CB049877B7F542 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBFBC5AAA234A58597112DF9 /* Pods-FA_TokenInputView_Tests-FA_TokenInputView-Private.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-FA_TokenInputView_Tests";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = FA_TokenInputView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		AECA0B5895271788ACCBCCBE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 106E3F1C66ED3B81C7CF0346 /* Pods-FA_TokenInputView_Example-FA_TokenInputView-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-FA_TokenInputView_Example-FA_TokenInputView/Pods-FA_TokenInputView_Example-FA_TokenInputView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-FA_TokenInputView_Example-FA_TokenInputView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-FA_TokenInputView_Example-FA_TokenInputView/Pods-FA_TokenInputView_Example-FA_TokenInputView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = FA_TokenInputView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		D3BFB492F1FE02413F75B295 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBFBC5AAA234A58597112DF9 /* Pods-FA_TokenInputView_Tests-FA_TokenInputView-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-FA_TokenInputView_Tests-FA_TokenInputView/Pods-FA_TokenInputView_Tests-FA_TokenInputView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Pods-FA_TokenInputView_Tests-FA_TokenInputView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-FA_TokenInputView_Tests-FA_TokenInputView/Pods-FA_TokenInputView_Tests-FA_TokenInputView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = FA_TokenInputView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		E7E4E8BE8D5EDC17C7158435 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBFBC5AAA234A58597112DF9 /* Pods-FA_TokenInputView_Tests-FA_TokenInputView-Private.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-FA_TokenInputView_Tests";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = FA_TokenInputView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		E7F48023ECE806E93595B699 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 165D3956355A5FE2A76A47AB /* Pods-FA_TokenInputView_Tests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-FA_TokenInputView_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods-FA_TokenInputView_Tests/Pods-FA_TokenInputView_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_FA_TokenInputView_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0479CFE1DAD9242248193584 /* Build configuration list for PBXProject "Pods" */ = {
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5F2FA1DA11C1D5E2693370A8 /* Debug */,
-				57281735421AFE55D4EF8FAD /* Release */,
+				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
+				FB45FFD90572718D82AB9092B750F0CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1748A7755644A02B6CFDFF8B /* Build configuration list for PBXNativeTarget "Pods-FA_TokenInputView_Tests" */ = {
+		8F5553B956A3B38BD8992D86165283E8 /* Build configuration list for PBXNativeTarget "FA_TokenInputView-FA_TokenInputView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3B14EAEFA0846AA4C831D717 /* Debug */,
-				E7F48023ECE806E93595B699 /* Release */,
+				4E68B21A3704CFF86BF18D9539C20CC4 /* Debug */,
+				B1C7E487A88636B7E233425D2C538D82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2073B15E2236760EE8E22BA5 /* Build configuration list for PBXNativeTarget "Pods-FA_TokenInputView_Example-FA_TokenInputView-FA_TokenInputView" */ = {
+		A3E619F0F5CE037E46785A3EFABABB40 /* Build configuration list for PBXNativeTarget "FA_TokenInputView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8C2C751527BD47A0B4641932 /* Debug */,
-				4FED69A1B35FB3C6F2BAC95C /* Release */,
+				14F5A02B8EEE5A9025B74DC48257DFF9 /* Debug */,
+				1823C5BB28F5998BAE7560E0BD6AB189 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		29808B2E9F3F30F25F8FC5D4 /* Build configuration list for PBXNativeTarget "Pods-FA_TokenInputView_Tests-FA_TokenInputView" */ = {
+		CE404D6CA7748E81333008B8132FB5A5 /* Build configuration list for PBXNativeTarget "Pods-FA_TokenInputView_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D3BFB492F1FE02413F75B295 /* Debug */,
-				8239579EC1F8C4B967582EA3 /* Release */,
+				71B6744BAE6B505B88B65EECF963D1D0 /* Debug */,
+				B4C18049DE8BC800979C9181581521A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		948482A6CBCDE3178DE5D756 /* Build configuration list for PBXNativeTarget "Pods-FA_TokenInputView_Example-FA_TokenInputView" */ = {
+		E1393681E09FAB6F9338C5E542C2D6AF /* Build configuration list for PBXNativeTarget "Pods-FA_TokenInputView_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				667FBD144C6F13C757A0B7F4 /* Debug */,
-				AECA0B5895271788ACCBCCBE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BD52DE288267D2B1C57D0BF3 /* Build configuration list for PBXNativeTarget "Pods-FA_TokenInputView_Example" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0176BC1FB60D4330ED9C0F31 /* Debug */,
-				6FA15D44EC4E4A5830321D0C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E3EEF711C13017600D024E0F /* Build configuration list for PBXNativeTarget "Pods-FA_TokenInputView_Tests-FA_TokenInputView-FA_TokenInputView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E7E4E8BE8D5EDC17C7158435 /* Debug */,
-				9D8E94A334CB049877B7F542 /* Release */,
+				ED91271E4926B10AD19372EED0C340D9 /* Debug */,
+				715A8FC4E772F2FE19C2FEC86D1BD827 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 012B7BDDF252A146F857AA3E /* Project object */;
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 }
