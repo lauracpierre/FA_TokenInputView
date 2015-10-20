@@ -62,6 +62,7 @@ public class FA_TokenInputView: UIView {
             return self.tokens.map { $0 }
         }
     }
+    
     var text: String {
         get { return self.textField.text! }
     }
@@ -69,6 +70,8 @@ public class FA_TokenInputView: UIView {
     var editing: Bool {
         get { return self.textField.editing }
     }
+    
+    var tokenizeOnEndEditing = true
     
     public var font: UIFont! {
         didSet {
@@ -420,6 +423,9 @@ extension FA_TokenInputView: UITextFieldDelegate  {
     public func textFieldDidEndEditing(textField: UITextField) {
         self.accessoryView?.hidden = true
         self.delegate?.tokenInputViewDidEnditing?(self)
+        if (self.tokenizeOnEndEditing) {
+            self.tokenizeTextFieldText()
+        }
     }
     
     public func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -557,11 +563,7 @@ extension FA_TokenInputView {
             CGContextAddLineToPoint(context, CGRectGetWidth(bounds), bounds.size.height)
             CGContextStrokePath(context)
         }
-
     }
-        
-    
-
 }
 
 

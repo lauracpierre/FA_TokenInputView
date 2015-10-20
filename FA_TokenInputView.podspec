@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "FA_TokenInputView"
-  s.version          = "0.1.3"
+  s.version          = "0.1.4"
   s.summary          = "FA_TokenInputView is a simple tokenview mimicking Apple mail token view."
   s.description      = <<-DESC
                        A Swift rewrite of TokenInputView used for the iOS FrontApp.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/lauracpierre/FA_TokenInputView"
   s.license          = 'MIT'
   s.author           = { "Pierre Laurac" => "pierre.laurac@gmail.com" }
-  s.source           = { :git => "https://github.com/lauracpierre/FA_TokenInputView.git", :tag => "v0.1.3" }
+  s.source           = { :git => "https://github.com/lauracpierre/FA_TokenInputView.git", :tag => "v#{s.version}" }
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
