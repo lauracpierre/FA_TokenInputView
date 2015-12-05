@@ -94,7 +94,6 @@ public class FA_TokenInputView: UIView {
         }
     }
     
-    
     private var tokens: [FA_Token] = []
     private var tokenViews: [FA_TokenView] = []
     private var textField: FA_BackspaceDetectingTextField!
@@ -164,7 +163,6 @@ public class FA_TokenInputView: UIView {
             return
         }
         
-        
         self.tokens.append(theToken)
         let tokenView = FA_TokenView(token: theToken)
         tokenView.font = self.font
@@ -194,6 +192,10 @@ public class FA_TokenInputView: UIView {
     
     public func setInputAccessoryView(view: UIView) {
         self.textField.inputAccessoryView = view
+    }
+    
+    public func forceTokenizeCurrentText() {
+        self.tokenizeTextFieldText()
     }
     
     private func removeTokenAtIndex(index: Int) {

@@ -76,21 +76,30 @@ class ViewController: UIViewController {
         button2.tintColor = toField.tintColor
         button2.titleLabel?.backgroundColor = UIColor.redColor()
         
+        let button3 = UIButton()
+        button3.translatesAutoresizingMaskIntoConstraints = false
+        button3.setTitle("Force tokenize", forState: .Normal)
+        button3.addTarget(self, action: "forceTokenize", forControlEvents: .TouchUpInside)
+        button3.tintColor = toField.tintColor
+        button3.titleLabel?.backgroundColor = UIColor.redColor()
+        
         self.view.addSubview(button1)
         self.view.addSubview(button2)
+        self.view.addSubview(button3)
         
         let views = [
             "to": toField,
             "cc": ccField,
             "b1": button1,
             "b2": button2,
+            "b3": button3,
             "topGuide": self.topLayoutGuide
         ] as [String: AnyObject]
         
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[topGuide][to][cc]-30-[b1]", options: .DirectionLeadingToTrailing, metrics: nil, views: views))
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[to]|", options: .DirectionLeftToRight, metrics: nil, views: views))
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[cc]|", options: .DirectionLeftToRight, metrics: nil, views: views))
-        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[b1]-[b2]-|", options: .AlignAllCenterY, metrics: nil, views: views))
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[b1]-[b2]-[b3]-|", options: .AlignAllCenterY, metrics: nil, views: views))
         
         let view = UIView(frame: CGRectMake(0, 0, 200, 45))
         view.backgroundColor = UIColor.redColor()
@@ -118,13 +127,18 @@ class ViewController: UIViewController {
     func setAutoHeightToField() {
         toField.setHeightToAuto()
     }
+    
+    func forceTokenize() {
+        self.toField.forceTokenizeCurrentText()
+        NSLog("just called validateCurrentTokendsadsa")
+    }
 
 }
 
 extension ViewController: FA_TokenInputViewDelegate {
     
     func tokenInputViewDidAddToken(view: FA_TokenInputView, token theNewToken: FA_Token) {
-        
+        NSLog("new token");
     }
     
     func tokenInputViewDidBeginEditing(view: FA_TokenInputView) {
