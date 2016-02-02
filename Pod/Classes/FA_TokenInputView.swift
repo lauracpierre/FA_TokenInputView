@@ -185,7 +185,7 @@ public class FA_TokenInputView: UIView {
     }
     
     public func removeToken(token theToken: FA_Token) {
-        if let index = self.tokens.indexOf(theToken) {
+        if let index = self.tokens.indexOf({ (token) -> Bool in return token == theToken }) {
             self.removeTokenAtIndex(index)
         }
     }
