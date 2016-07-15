@@ -318,7 +318,10 @@ public class FA_TokenInputView: UIView {
       
       curX = CGRectGetMaxX(tokenRect) + FA_TokenInputView.HSPACE
       yPositionForLastToken = tokenRect.origin.y
+      view.setTokenVisibility(view != self.tokenViews.last || self.editing)
     }
+    
+    
     
     // Always indent textfield by a little bit
     curX += FA_TokenInputView.TEXT_FIELD_HSPACE
