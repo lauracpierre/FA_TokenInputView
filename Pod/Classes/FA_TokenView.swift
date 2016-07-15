@@ -9,18 +9,20 @@
 import Foundation
 
 protocol FA_TokenViewDelegate: class {
-    func tokenViewDidRequestDelete(tokenView: FA_TokenView, replaceWithText theText: String?)
-    func tokenViewDidRequestSelection(tokenView: FA_TokenView)
+  func tokenViewDidRequestDelete(tokenView: FA_TokenView, replaceWithText theText: String?)
+  func tokenViewDidRequestSelection(tokenView: FA_TokenView)
+  func tokenViewShouldDisplayMenu(tokenView: FA_TokenView) -> Bool
+  func tokenViewMenuItems(tokenView: FA_TokenView) -> [UIMenuItem]
 }
 
 class FA_TokenView: UIView {
-    
+  
+  var token: FA_Token!
     var displayText: String!
     var autocorrectionType: UITextAutocorrectionType = .No
     
     weak var delegate: FA_TokenViewDelegate?
     private(set) var selected = false
-    
     
     private static let PADDING_X: CGFloat = 4.0
     private static let PADDING_Y: CGFloat = 2.0
@@ -37,7 +39,8 @@ class FA_TokenView: UIView {
     
     init(token theToken: FA_Token) {
         super.init(frame: CGRectZero)
-        
+      
+      self.token = theToken
         var tintColor = UIColor(red: 0.0823, green: 0.4941, blue: 0.9843, alpha: 1.0)
         if let tint = self.tintColor {
             tintColor = tint
@@ -77,8 +80,11 @@ class FA_TokenView: UIView {
         self.selectedLabel.text = self.displayText
         
         // Listen for taps
-        let tapGesture = UITapGestureRecognizer(target: self, action: "handleTapGestureRecognizer:")
+      let tapGesture = UITapGestureRecognizer(target: self, action: #selector(FA_TokenView.handleTapGestureRecognizer(_:)))
+      let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTapGestureRecognizer(_:)))
+      doubleTapGesture.numberOfTapsRequired = 2
         self.addGestureRecognizer(tapGesture)
+      self.addGestureRecognizer(doubleTapGesture)
         self.setNeedsLayout()
 
     }
@@ -156,7 +162,29 @@ class FA_TokenView: UIView {
     func handleTapGestureRecognizer(recognizer: UITapGestureRecognizer) {
         self.delegate?.tokenViewDidRequestSelection(self)
     }
+  
+  func handleDoubleTapGestureRecognizer(recognizer: UITapGestureRecognizer) {
+    guard let delegate = self.delegate else { return }
     
+    if !delegate.tokenViewShouldDisplayMenu(self) {
+      return
+    }
+    
+    let items = delegate.tokenViewMenuItems(self)
+    if items.isEmpty {
+      return
+    }
+    self.becomeFirstResponder()
+    let menu = UIMenuController.sharedMenuController()
+    menu.menuItems = items
+    menu.setTargetRect(self.bounds, inView: self)
+    menu.setMenuVisible(true, animated: true)
+  }
+
+  override func copy() -> AnyObject {
+    NSLog("copy was clicked")
+    return ""
+  }
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -171,6 +199,14 @@ class FA_TokenView: UIView {
         self.label.frame = labelFrame;
 
     }
+  
+  override func canPerformAction(action: Selector, withSender sender: AnyObject?) -> Bool {
+    return false
+  }
+  
+  func handleTap() {
+    
+  }
 
     
 }

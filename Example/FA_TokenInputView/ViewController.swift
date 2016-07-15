@@ -66,20 +66,20 @@ class ViewController: UIViewController {
         let button1 = UIButton()
         button1.translatesAutoresizingMaskIntoConstraints = false
         button1.setTitle("Zero Height", forState: .Normal)
-        button1.addTarget(self, action: "setZeroHeightToField", forControlEvents: .TouchUpInside)
+      button1.addTarget(self, action: #selector(ViewController.setZeroHeightToField), forControlEvents: .TouchUpInside)
         button1.titleLabel?.backgroundColor = UIColor.redColor()
         
         let button2 = UIButton()
         button2.translatesAutoresizingMaskIntoConstraints = false
         button2.setTitle("Auto Height", forState: .Normal)
-        button2.addTarget(self, action: "setAutoHeightToField", forControlEvents: .TouchUpInside)
+        button2.addTarget(self, action: #selector(ViewController.setAutoHeightToField), forControlEvents: .TouchUpInside)
         button2.tintColor = toField.tintColor
         button2.titleLabel?.backgroundColor = UIColor.redColor()
         
         let button3 = UIButton()
         button3.translatesAutoresizingMaskIntoConstraints = false
         button3.setTitle("Force tokenize", forState: .Normal)
-        button3.addTarget(self, action: "forceTokenize", forControlEvents: .TouchUpInside)
+        button3.addTarget(self, action: #selector(ViewController.forceTokenize), forControlEvents: .TouchUpInside)
         button3.tintColor = toField.tintColor
         button3.titleLabel?.backgroundColor = UIColor.redColor()
         
@@ -164,4 +164,18 @@ extension ViewController: FA_TokenInputViewDelegate {
     func tokenInputViewTokenForText(view: FA_TokenInputView, text searchToken: String) -> FA_Token? {
         return FA_Token(displayText: searchToken, baseObject: searchToken)
     }
+  
+  func tokenInputViewShouldDisplayMenuItems(view: FA_TokenInputView) -> Bool {
+    return true
+  }
+  
+  func tokenInputViewMenuItems(view: FA_TokenInputView, token: FA_Token) -> [UIMenuItem] {
+    let menu = UIMenuItem(title: "Copy Email address", action: #selector(ViewController.copyFromMenu(_:)))
+    return [menu]
+  }
+  
+  func copyFromMenu(sender: AnyObject) {
+    NSLog("Copy from menu called")
+  }
+  
 }
