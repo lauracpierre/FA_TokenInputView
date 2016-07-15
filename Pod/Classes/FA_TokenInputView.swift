@@ -120,7 +120,11 @@ public class FA_TokenInputView: UIView {
   private static var STANDARD_ROW_HEIGHT: CGFloat = 25.0
   private static var FIELD_MARGIN_X: CGFloat = 4.0
   
-  init(mode: FA_TokenInputViewMode = .Edit) {
+  public convenience init() {
+    self.init(mode: .Edit)
+  }
+  
+  public init(mode: FA_TokenInputViewMode) {
     super.init(frame: CGRectZero)
     self.commonInit(mode)
   }
@@ -159,6 +163,7 @@ public class FA_TokenInputView: UIView {
     self.repositionViews()
     self.backgroundColor = UIColor.whiteColor()
     
+    self.clipsToBounds = true
     self.displayMode = mode
     self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(FA_TokenInputView.viewWasTapped)))
     self.heightZeroConstraint = NSLayoutConstraint(item: self, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: 0.0)
@@ -259,7 +264,6 @@ public class FA_TokenInputView: UIView {
     
     var curX = FA_TokenInputView.PADDING_LEFT
     var curY = FA_TokenInputView.PADDING_TOP
-    var totalHeight = FA_TokenInputView.STANDARD_ROW_HEIGHT
     var isOnFirstLine = true
     var yPositionForLastToken: CGFloat = 0.0
     
@@ -307,7 +311,6 @@ public class FA_TokenInputView: UIView {
         // Need a new line
         curX = FA_TokenInputView.PADDING_LEFT
         curY += FA_TokenInputView.STANDARD_ROW_HEIGHT+FA_TokenInputView.VSPACE
-        totalHeight += FA_TokenInputView.STANDARD_ROW_HEIGHT
         isOnFirstLine = false
       }
       
@@ -331,7 +334,6 @@ public class FA_TokenInputView: UIView {
       isOnFirstLine = false
       curX = FA_TokenInputView.PADDING_LEFT + FA_TokenInputView.TEXT_FIELD_HSPACE
       curY += FA_TokenInputView.STANDARD_ROW_HEIGHT+FA_TokenInputView.VSPACE
-      totalHeight += FA_TokenInputView.STANDARD_ROW_HEIGHT
       // Adjust the width
       availableWidthForTextField = rightBoundary - curX
     }
@@ -339,7 +341,6 @@ public class FA_TokenInputView: UIView {
     if (!self.editing && curY > yPositionForLastToken && !self.tokens.isEmpty) {
       // check if there is another token on the line and if not we should remove the line height
       curY -= FA_TokenInputView.STANDARD_ROW_HEIGHT+FA_TokenInputView.VSPACE
-      totalHeight -= FA_TokenInputView.STANDARD_ROW_HEIGHT
     }
     
     if self.editing {
@@ -348,8 +349,12 @@ public class FA_TokenInputView: UIView {
       self.textField.frame = CGRectZero
     }
     
+    if self.displayMode == .View {
+      self.textField.frame = CGRectZero
+    }
+    
     let oldContentHeight = self.intrinsicContentHeight
-    self.intrinsicContentHeight = CGRectGetMaxY(self.textField.frame)+FA_TokenInputView.PADDING_BOTTOM
+    self.intrinsicContentHeight = self.getIntrinsincContentHeightAfterReposition()
     self.invalidateIntrinsicContentSize()
     
     if (oldContentHeight != self.intrinsicContentHeight) {
@@ -357,6 +362,18 @@ public class FA_TokenInputView: UIView {
     }
     self.setNeedsDisplay()
     
+  }
+  
+  private func getIntrinsincContentHeightAfterReposition() -> CGFloat {
+    if self.editing {
+      return CGRectGetMaxY(self.textField.frame)+FA_TokenInputView.PADDING_BOTTOM
+    }
+    
+    guard let view = self.tokenViews.last else {
+      return 0
+    }
+    
+    return CGRectGetMaxY(view.frame)+FA_TokenInputView.PADDING_BOTTOM
   }
   
   private func repositionViewZeroHeight() {
@@ -410,6 +427,9 @@ public class FA_TokenInputView: UIView {
   }
   
   func viewWasTapped() {
+    if self.displayMode == .View {
+      return
+    }
     self.beginEditing()
   }
 }
@@ -610,6 +630,9 @@ extension FA_TokenInputView {
 // MARK: - FA_TokenViewDelegate
 extension FA_TokenInputView: FA_TokenViewDelegate {
   func tokenViewDidRequestDelete(tokenView: FA_TokenView, replaceWithText theText: String?) {
+    if self.displayMode == .View {
+      return
+    }
     // First, refocus the text field
     self.textField.becomeFirstResponder()
     if !(theText?.isEmpty ?? true) {
