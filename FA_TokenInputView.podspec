@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "FA_TokenInputView"
-  s.version          = "0.2.0"
+  s.version          = "0.2.1"
   s.summary          = "FA_TokenInputView is a simple tokenview mimicking Apple mail token view."
   s.description      = <<-DESC
                        A Swift rewrite of TokenInputView used for the iOS FrontApp.
@@ -24,8 +24,5 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'FA_TokenInputView' => ['Pod/Assets/*.png']
-  }
 
 end
