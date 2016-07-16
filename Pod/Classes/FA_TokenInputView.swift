@@ -14,28 +14,34 @@ import Foundation
    *  Called when the text field begins editing
    */
   optional func tokenInputViewDidEnditing(view: FA_TokenInputView)
+  
   /**
    *  Called when the text field ends editing
    */
   optional func tokenInputViewDidBeginEditing(view: FA_TokenInputView)
+  
   /**
    * Called when the text field text has changed. You should update your autocompleting UI based on the text supplied.
    */
   optional func tokenInputViewDidChangeText(view: FA_TokenInputView, text theNewText: String)
+  
   /**
    * Called when a token has been added. You should use this opportunity to update your local list of selected items.
    */
   optional func tokenInputViewDidAddToken(view: FA_TokenInputView, token theNewToken: FA_Token)
+  
   /**
    * Called when a token has been removed. You should use this opportunity to update your local list of selected items.
    */
   optional func tokenInputViewDidRemoveToken(view: FA_TokenInputView, token removedToken: FA_Token)
+  
   /**
    * Called when the user attempts to press the Return key with text partially typed.
    * @return A CLToken for a match (typically the first item in the matching results),
    * or nil if the text shouldn't be accepted.
    */
   optional func tokenInputViewTokenForText(view: FA_TokenInputView, text searchToken: String) -> FA_Token?
+  
   /**
    * Called when the view has updated its own height. If you are
    * not using Autolayout, you should use this method to update the
@@ -43,8 +49,21 @@ import Foundation
    */
   optional func tokenInputViewDidChangeHeight(view: FA_TokenInputView,  height newHeight:CGFloat)
   
+  /**
+   * Called when the view has received a double tap gesture. If you want to display a menu above
+   * the `FA_TokenView` return true. 
+   * In order to display the items, you should also implement `tokenInputViewMenuItems`
+   * 
+   * @return true if you want to display a UIMenuController element
+   */
   optional func tokenInputViewShouldDisplayMenuItems(view: FA_TokenInputView) -> Bool
   
+  /**
+   * Called if the `tokenInputViewShouldDisplayMenuItems` returned true.
+   * Return the UIMenuItem you want to display above or below the `FA_Token`
+   * 
+   * @return the array of `UIMenuItem`
+   */
   optional func tokenInputViewMenuItems(view: FA_TokenInputView, token: FA_Token) -> [UIMenuItem]
 }
 
@@ -106,19 +125,31 @@ public class FA_TokenInputView: UIView {
   private var textField: FA_BackspaceDetectingTextField!
   private var fieldLabel: UILabel!
   private var intrinsicContentHeight: CGFloat!
-  private var heightZeroConstraint: NSLayoutConstraint!
   private var displayMode: FA_TokenInputViewMode!
   
-  private static var HSPACE: CGFloat = 0.0
-  private static var TEXT_FIELD_HSPACE: CGFloat = 4.0
-  private static var VSPACE: CGFloat = 4.0
-  private static var MINIMUM_TEXTFIELD_WIDTH: CGFloat = 10.0
-  private static var PADDING_TOP: CGFloat = 10.0
-  private static var PADDING_BOTTOM: CGFloat = 10.0
-  private static var PADDING_LEFT: CGFloat = 8.0
-  private static var PADDING_RIGHT: CGFloat = 16.0
-  private static var STANDARD_ROW_HEIGHT: CGFloat = 25.0
-  private static var FIELD_MARGIN_X: CGFloat = 4.0
+  private var textColor: UIColor!
+  private var selectedTextColor: UIColor!
+  private var selectedBackgroundColor: UIColor!
+  private var separatorColor: UIColor!
+  
+  public var HSPACE: CGFloat = 0.0
+  public var TEXT_FIELD_HSPACE: CGFloat = 4.0
+  
+  /// The space betwen each rows
+  public var VERTICAL_SPACE_BETWEEN_ROWS: CGFloat = 4.0
+  
+  /// The minimum space the textfield should be. If the space cannot be allocated, then a new line will be created
+  public var MINIMUM_TEXTFIELD_WIDTH: CGFloat = 10.0
+  
+  public var PADDING_TOP: CGFloat = 10.0
+  public var PADDING_BOTTOM: CGFloat = 10.0
+  public var PADDING_LEFT: CGFloat = 8.0
+  public var PADDING_RIGHT: CGFloat = 16.0
+  public var STANDARD_ROW_HEIGHT: CGFloat = 25.0
+  public var FIELD_MARGIN_X: CGFloat = 4.0
+  
+  /// Minimum height size for the view if empty
+  public var MINIMUM_VIEW_HEIGHT: CGFloat = 45.0
   
   public convenience init() {
     self.init(mode: .Edit)
@@ -144,7 +175,7 @@ public class FA_TokenInputView: UIView {
     
     self.font = UIFont.systemFontOfSize(17.0)
     self.textField = FA_BackspaceDetectingTextField(frame: self.bounds)
-    self.textField.backgroundColor = UIColor.orangeColor()
+    self.textField.backgroundColor = UIColor.clearColor()
     self.textField.keyboardType = self.keyboardType;
     self.textField.autocorrectionType = self.autocorrectionType;
     self.textField.autocapitalizationType = self.autocapitalizationType;
@@ -159,23 +190,28 @@ public class FA_TokenInputView: UIView {
     self.fieldLabel.hidden = true
     
     self.backgroundColor = UIColor.clearColor()
-    self.intrinsicContentHeight = FA_TokenInputView.STANDARD_ROW_HEIGHT
+    self.intrinsicContentHeight = self.STANDARD_ROW_HEIGHT
     self.repositionViews()
-    self.backgroundColor = UIColor.whiteColor()
     
     self.clipsToBounds = true
     self.displayMode = mode
     self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(FA_TokenInputView.viewWasTapped)))
-    self.heightZeroConstraint = NSLayoutConstraint(item: self, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: 0.0)
+
+    self.setDefaultColors()
   }
   
   override public func intrinsicContentSize() -> CGSize {
-    return CGSizeMake(UIViewNoIntrinsicMetric, max(45, self.intrinsicContentHeight))
+    return CGSizeMake(UIViewNoIntrinsicMetric, max(self.MINIMUM_VIEW_HEIGHT, self.intrinsicContentHeight))
   }
   
-  override public func tintColorDidChange() {
-    for view in self.tokenViews {
-      view.tintColor = self.tintColor
+  public func setColors(textColor: UIColor, selectedTextColor: UIColor, selectedBackgroundColor: UIColor) {
+    
+    self.textColor = textColor
+    self.selectedTextColor = selectedTextColor
+    self.selectedBackgroundColor = selectedBackgroundColor
+    
+    self.tokenViews.forEach { (tokenView) in
+      tokenView.setColors(textColor, selectedTextColor: selectedTextColor, selectedBackgroundColor: selectedBackgroundColor)
     }
   }
   
@@ -187,10 +223,8 @@ public class FA_TokenInputView: UIView {
     self.tokens.append(theToken)
     let tokenView = FA_TokenView(token: theToken)
     tokenView.font = self.font
-    if let tint = self.tintColor {
-      tokenView.setTintColor(color: tint)
-    }
     tokenView.delegate = self;
+    tokenView.setColors(self.textColor, selectedTextColor: self.selectedTextColor, selectedBackgroundColor: self.selectedBackgroundColor)
     let intrinsicSize = tokenView.intrinsicContentSize()
     tokenView.frame = CGRectMake(0, 0, intrinsicSize.width, intrinsicSize.height);
     self.tokenViews.append(tokenView)
@@ -202,6 +236,16 @@ public class FA_TokenInputView: UIView {
     self.onTextFieldDidChange(self.textField)
     
     self.updatePlaceholderTextVisibility()
+    self.repositionViews()
+  }
+  
+  public func removeAllTokens() {
+    let tokens = self.tokens
+    self.tokens = []
+    self.tokenViews = []
+    tokens.forEach {
+      self.delegate?.tokenInputViewDidRemoveToken?(self, token: $0)
+    }
     self.repositionViews()
   }
   
@@ -232,7 +276,7 @@ public class FA_TokenInputView: UIView {
     self.repositionViews()
   }
   
-  func tokenizeTextFieldText() -> FA_Token? {
+  private func tokenizeTextFieldText() -> FA_Token? {
     
     let text = self.textField.text;
     if !text!.isEmpty {
@@ -246,12 +290,25 @@ public class FA_TokenInputView: UIView {
     return nil
   }
   
-  func textFieldDisplayOffset() -> CGFloat {
-    // Essentially the textfield's y with PADDING_TOP
-    return CGRectGetMinY(self.textField.frame) - FA_TokenInputView.PADDING_TOP
+  private func setDefaultColors() {
+    if let tint = self.tintColor {
+      self.textColor = tint
+      self.selectedBackgroundColor = tint
+      self.selectedTextColor = UIColor.whiteColor()
+      return
+    }
+    
+    self.textColor = UIColor.blackColor()
+    self.selectedTextColor = UIColor.whiteColor()
+    self.selectedBackgroundColor = UIColor.blackColor()
   }
   
-  func repositionViews() {
+  private func textFieldDisplayOffset() -> CGFloat {
+    // Essentially the textfield's y with PADDING_TOP
+    return CGRectGetMinY(self.textField.frame) - self.PADDING_TOP
+  }
+  
+  private func repositionViews() {
     let bounds = self.bounds
     
     if bounds.height == 0 {
@@ -259,11 +316,11 @@ public class FA_TokenInputView: UIView {
       return
     }
     
-    let rightBoundary = CGRectGetWidth(bounds) - FA_TokenInputView.PADDING_RIGHT
+    let rightBoundary = CGRectGetWidth(bounds) - self.PADDING_RIGHT
     var firstLineRightBoundary = rightBoundary
     
-    var curX = FA_TokenInputView.PADDING_LEFT
-    var curY = FA_TokenInputView.PADDING_TOP
+    var curX = self.PADDING_LEFT
+    var curY = self.PADDING_TOP
     var isOnFirstLine = true
     var yPositionForLastToken: CGFloat = 0.0
     
@@ -271,33 +328,33 @@ public class FA_TokenInputView: UIView {
     if let fieldView = self.fieldView {
       fieldView.sizeToFit()
       var fieldViewRect = fieldView.frame
-      fieldViewRect.origin.x = curX + FA_TokenInputView.FIELD_MARGIN_X
-      fieldViewRect.origin.y = curY + ((FA_TokenInputView.STANDARD_ROW_HEIGHT - CGRectGetHeight(fieldViewRect))/2.0)
+      fieldViewRect.origin.x = curX + self.FIELD_MARGIN_X
+      fieldViewRect.origin.y = curY + ((self.STANDARD_ROW_HEIGHT - CGRectGetHeight(fieldViewRect))/2.0)
       fieldView.frame = fieldViewRect
       
-      curX = CGRectGetMaxX(fieldViewRect) + FA_TokenInputView.FIELD_MARGIN_X
+      curX = CGRectGetMaxX(fieldViewRect) + self.FIELD_MARGIN_X
     }
     
     // Position field label (if field name is set)
     if !self.fieldLabel.hidden {
       self.fieldLabel.sizeToFit()
       var fieldLabelRect = self.fieldLabel.frame
-      fieldLabelRect.origin.x = curX + FA_TokenInputView.FIELD_MARGIN_X
-      fieldLabelRect.origin.y = curY + ((FA_TokenInputView.STANDARD_ROW_HEIGHT-CGRectGetHeight(fieldLabelRect))/2.0)
+      fieldLabelRect.origin.x = curX + self.FIELD_MARGIN_X
+      fieldLabelRect.origin.y = curY + ((self.STANDARD_ROW_HEIGHT-CGRectGetHeight(fieldLabelRect))/2.0)
       self.fieldLabel.frame = fieldLabelRect
       
-      curX = CGRectGetMaxX(fieldLabelRect) + FA_TokenInputView.FIELD_MARGIN_X
+      curX = CGRectGetMaxX(fieldLabelRect) + self.FIELD_MARGIN_X
     }
     
     // Position accessory view (if set)
     if let accessoryView = self.accessoryView {
       accessoryView.sizeToFit()
       var accessoryRect = accessoryView.frame
-      accessoryRect.origin.x = CGRectGetWidth(bounds) - FA_TokenInputView.PADDING_RIGHT - CGRectGetWidth(accessoryRect)
+      accessoryRect.origin.x = CGRectGetWidth(bounds) - self.PADDING_RIGHT - CGRectGetWidth(accessoryRect)
       accessoryRect.origin.y = curY
       accessoryView.frame = accessoryRect
       
-      firstLineRightBoundary = CGRectGetMinX(accessoryRect) - FA_TokenInputView.HSPACE
+      firstLineRightBoundary = CGRectGetMinX(accessoryRect) - self.HSPACE
     }
     
     // Position token views
@@ -309,42 +366,42 @@ public class FA_TokenInputView: UIView {
       let tokenBoundary = isOnFirstLine ? firstLineRightBoundary : rightBoundary
       if (curX + CGRectGetWidth(tokenRect) > tokenBoundary) {
         // Need a new line
-        curX = FA_TokenInputView.PADDING_LEFT
-        curY += FA_TokenInputView.STANDARD_ROW_HEIGHT+FA_TokenInputView.VSPACE
+        curX = self.PADDING_LEFT
+        curY += self.STANDARD_ROW_HEIGHT+self.VERTICAL_SPACE_BETWEEN_ROWS
         isOnFirstLine = false
       }
       
       tokenRect.origin.x = curX
       // Center our tokenView vertially within STANDARD_ROW_HEIGHT
-      tokenRect.origin.y = curY + ((FA_TokenInputView.STANDARD_ROW_HEIGHT-CGRectGetHeight(tokenRect))/2.0)
+      tokenRect.origin.y = curY + ((self.STANDARD_ROW_HEIGHT-CGRectGetHeight(tokenRect))/2.0)
       view.frame = tokenRect
       
-      curX = CGRectGetMaxX(tokenRect) + FA_TokenInputView.HSPACE
+      curX = CGRectGetMaxX(tokenRect) + self.HSPACE
       yPositionForLastToken = tokenRect.origin.y
-      view.setTokenVisibility(view != self.tokenViews.last || self.editing)
+      view.setSeparatorVisibility(view != self.tokenViews.last || self.editing)
     }
     
     
     
     // Always indent textfield by a little bit
-    curX += FA_TokenInputView.TEXT_FIELD_HSPACE
+    curX += self.TEXT_FIELD_HSPACE
     let textBoundary = isOnFirstLine ? firstLineRightBoundary : rightBoundary
     var availableWidthForTextField = textBoundary - curX
-    if (availableWidthForTextField < FA_TokenInputView.MINIMUM_TEXTFIELD_WIDTH) {
+    if (availableWidthForTextField < self.MINIMUM_TEXTFIELD_WIDTH) {
       isOnFirstLine = false
-      curX = FA_TokenInputView.PADDING_LEFT + FA_TokenInputView.TEXT_FIELD_HSPACE
-      curY += FA_TokenInputView.STANDARD_ROW_HEIGHT+FA_TokenInputView.VSPACE
+      curX = self.PADDING_LEFT + self.TEXT_FIELD_HSPACE
+      curY += self.STANDARD_ROW_HEIGHT+self.VERTICAL_SPACE_BETWEEN_ROWS
       // Adjust the width
       availableWidthForTextField = rightBoundary - curX
     }
     
     if (!self.editing && curY > yPositionForLastToken && !self.tokens.isEmpty) {
       // check if there is another token on the line and if not we should remove the line height
-      curY -= FA_TokenInputView.STANDARD_ROW_HEIGHT+FA_TokenInputView.VSPACE
+      curY -= self.STANDARD_ROW_HEIGHT+self.VERTICAL_SPACE_BETWEEN_ROWS
     }
     
     if self.editing {
-      self.textField.frame = CGRectMake(curX, curY, availableWidthForTextField, FA_TokenInputView.STANDARD_ROW_HEIGHT)
+      self.textField.frame = CGRectMake(curX, curY, availableWidthForTextField, self.STANDARD_ROW_HEIGHT)
     } else {
       self.textField.frame = CGRectZero
     }
@@ -366,14 +423,14 @@ public class FA_TokenInputView: UIView {
   
   private func getIntrinsincContentHeightAfterReposition() -> CGFloat {
     if self.editing {
-      return CGRectGetMaxY(self.textField.frame)+FA_TokenInputView.PADDING_BOTTOM
+      return CGRectGetMaxY(self.textField.frame)+self.PADDING_BOTTOM
     }
     
     guard let view = self.tokenViews.last else {
       return 0
     }
     
-    return CGRectGetMaxY(view.frame)+FA_TokenInputView.PADDING_BOTTOM
+    return CGRectGetMaxY(view.frame)+self.PADDING_BOTTOM
   }
   
   private func repositionViewZeroHeight() {
@@ -402,7 +459,7 @@ public class FA_TokenInputView: UIView {
     self.repositionViews()
   }
   
-  func updatePlaceholderTextVisibility() {
+  private func updatePlaceholderTextVisibility() {
     if self.tokens.isEmpty {
       self.textField.placeholder = self.placeholderText
     } else {
@@ -418,15 +475,8 @@ public class FA_TokenInputView: UIView {
     self.repositionViews()
   }
   
-  public func setHeightToZero() {
-    self.addConstraint(self.heightZeroConstraint)
-  }
-  
-  public func setHeightToAuto() {
-    self.removeConstraint(self.heightZeroConstraint)
-  }
-  
   func viewWasTapped() {
+    self.unselectAllTokenViewsAnimated(true)
     if self.displayMode == .View {
       return
     }

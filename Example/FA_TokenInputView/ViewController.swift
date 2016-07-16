@@ -17,6 +17,8 @@ class ViewController: UIViewController {
   
   var bccField: FA_TokenInputView!
   
+  var toFieldHeightConstraint: NSLayoutConstraint!
+  
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     
@@ -53,6 +55,10 @@ class ViewController: UIViewController {
     bccField.translatesAutoresizingMaskIntoConstraints = false
     bccField.drawBottomBorder = true
     bccField.fieldName = "Bcc"
+    
+    let black = UIColor(red: 0.13, green: 0.13, blue: 0.13, alpha: 1)
+    let selected = UIColor(red: 0.94, green: 0.94, blue: 0.94, alpha: 1.0)
+    bccField.setColors(black, selectedTextColor: black, selectedBackgroundColor: selected)
     bccField.delegate = self
     
     
@@ -122,6 +128,10 @@ class ViewController: UIViewController {
     self.bccField.addToken(token: FA_Token(displayText: "some token", baseObject:"some object"))
     self.bccField.addToken(token: FA_Token(displayText: "foo@bar.com", baseObject:"foo@bar.com"))
     self.bccField.addToken(token: FA_Token(displayText: "longeremail@thisshouldoverflow.com", baseObject:"longeremail@thisshouldoverflow.com"))
+    
+    self.toFieldHeightConstraint = NSLayoutConstraint(item: self.toField, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: 0.0)
+    self.view.addConstraint(self.toFieldHeightConstraint)
+    self.setAutoHeightToField()
     // Do any additional setup after loading the view, typically from a nib.
   }
   
@@ -135,17 +145,18 @@ class ViewController: UIViewController {
   }
   
   func setZeroHeightToField() {
-    toField.setHeightToZero()
+    NSLayoutConstraint.activateConstraints([self.toFieldHeightConstraint])
   }
   
   func setAutoHeightToField() {
-    toField.setHeightToAuto()
+    NSLayoutConstraint.deactivateConstraints([self.toFieldHeightConstraint])
   }
   
   func forceTokenize() {
     self.toField.forceTokenizeCurrentText()
     NSLog("just called validateCurrentTokendsadsa")
   }
+  
   
 }
 

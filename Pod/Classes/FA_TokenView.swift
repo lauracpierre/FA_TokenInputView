@@ -30,6 +30,11 @@ class FA_TokenView: UIView {
   private var selectedBackgroundView: UIView!
   private var selectedLabel: UILabel!
   
+  private var textColor: UIColor!
+  private var selectedTextColor: UIColor!
+  private var selectedBackgroundColor: UIColor!
+  private var separatorColor: UIColor!
+  
   var font: UIFont! {
     didSet {
       self.label.font = self.font
@@ -39,6 +44,9 @@ class FA_TokenView: UIView {
   
   init(token theToken: FA_Token) {
     super.init(frame: CGRectZero)
+    
+    self.separatorColor = UIColor.lightGrayColor()
+    self.selectedTextColor = UIColor.whiteColor()
     
     self.token = theToken
     var tintColor = UIColor(red: 0.0823, green: 0.4941, blue: 0.9843, alpha: 1.0)
@@ -61,7 +69,6 @@ class FA_TokenView: UIView {
     self.selectedLabel.backgroundColor = UIColor.clearColor()
     self.selectedLabel.hidden = true
     self.addSubview(self.selectedLabel)
-    
     
     self.displayText = theToken.displayText
     
@@ -140,7 +147,7 @@ class FA_TokenView: UIView {
     }
   }
   
-  func setTokenVisibility(visible: Bool) {
+  func setSeparatorVisibility(visible: Bool) {
     self.displayText = self.token.displayText
     let labelString = "\(self.displayText),"
     let attrString = NSMutableAttributedString(string: labelString, attributes: [
@@ -150,27 +157,34 @@ class FA_TokenView: UIView {
     let tintRange = (labelString as NSString).rangeOfString(self.displayText)
     
     // Make the name part the system tint color
-    attrString.setAttributes([NSForegroundColorAttributeName : tintColor], range: tintRange)
+    attrString.setAttributes([NSForegroundColorAttributeName : self.textColor], range: tintRange)
     self.label.attributedText = attrString
   }
   
-  func setTintColor(color theColor: UIColor) {
-    if self.tintColor != nil {
-      super.tintColor = theColor
-    }
-    self.label.textColor = tintColor
-    self.selectedBackgroundView.backgroundColor = tintColor
+  
+  func setColors(textColor: UIColor, selectedTextColor: UIColor, selectedBackgroundColor: UIColor) {
+    self.textColor = textColor
+    self.selectedTextColor = selectedTextColor
+    self.selectedBackgroundColor = selectedBackgroundColor
+    self.updateColors()
+  }
+  
+  func updateColors() {
+    
+    self.label.textColor = self.textColor
+    self.selectedBackgroundView.backgroundColor = self.selectedBackgroundColor
+    self.selectedLabel.textColor = self.selectedTextColor
+    
     let attrString: AnyObject = self.label.attributedText!.mutableCopy()
     let labelString = "\(self.displayText),"
     let tintRange = (labelString as NSString).rangeOfString(self.displayText)
     // Make the overall text color gray
-    attrString.setAttributes([NSForegroundColorAttributeName: UIColor.lightGrayColor()], range:NSMakeRange(0, attrString.length))
+    attrString.setAttributes([NSForegroundColorAttributeName: self.separatorColor], range:NSMakeRange(attrString.length - 1, 1))
     // Make the name part the system tint color
-    attrString.setAttributes([NSForegroundColorAttributeName : tintColor], range:tintRange)
+    attrString.setAttributes([NSForegroundColorAttributeName : self.textColor], range:tintRange)
     if let attrString = attrString as? NSAttributedString {
       self.label.attributedText = attrString
     }
-    
   }
   
   func handleTapGestureRecognizer(recognizer: UITapGestureRecognizer) {
@@ -213,12 +227,6 @@ class FA_TokenView: UIView {
   override func canPerformAction(action: Selector, withSender sender: AnyObject?) -> Bool {
     return false
   }
-  
-  func handleTap() {
-    
-  }
-  
-  
 }
 
 extension FA_TokenView: UIKeyInput {
