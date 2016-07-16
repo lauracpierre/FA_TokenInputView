@@ -384,6 +384,9 @@ public class FA_TokenInputView: UIView {
       tokenRect.origin.x = curX
       // Center our tokenView vertially within STANDARD_ROW_HEIGHT
       tokenRect.origin.y = curY + ((self.STANDARD_ROW_HEIGHT-CGRectGetHeight(tokenRect))/2.0)
+      if tokenRect.width > self.getMaxLineWidth() {
+        tokenRect.size.width = self.getMaxLineWidth()
+      }
       view.frame = tokenRect
       
       curX = CGRectGetMaxX(tokenRect) + self.HSPACE
@@ -429,6 +432,10 @@ public class FA_TokenInputView: UIView {
     }
     self.setNeedsDisplay()
     
+  }
+  
+  private func getMaxLineWidth() -> CGFloat {
+    return self.frame.width - self.PADDING_RIGHT - self.PADDING_LEFT
   }
   
   private func getIntrinsincContentHeightAfterReposition() -> CGFloat {
