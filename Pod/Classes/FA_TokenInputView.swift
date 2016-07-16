@@ -126,6 +126,7 @@ public class FA_TokenInputView: UIView {
   private var fieldLabel: UILabel!
   private var intrinsicContentHeight: CGFloat!
   private var displayMode: FA_TokenInputViewMode!
+  private var heightZeroConstraint: NSLayoutConstraint!
   
   private var textColor: UIColor!
   private var selectedTextColor: UIColor!
@@ -196,7 +197,8 @@ public class FA_TokenInputView: UIView {
     self.clipsToBounds = true
     self.displayMode = mode
     self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(FA_TokenInputView.viewWasTapped)))
-
+    self.heightZeroConstraint = NSLayoutConstraint(item: self, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: 0.0)
+    
     self.setDefaultColors()
   }
   
@@ -237,6 +239,14 @@ public class FA_TokenInputView: UIView {
     
     self.updatePlaceholderTextVisibility()
     self.repositionViews()
+  }
+  
+  public func setHeightToZero() {
+    self.addConstraint(self.heightZeroConstraint)
+  }
+  
+  public func setHeightToAuto() {
+    self.removeConstraint(self.heightZeroConstraint)
   }
   
   public func removeAllTokens() {

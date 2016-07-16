@@ -17,8 +17,6 @@ class ViewController: UIViewController {
   
   var bccField: FA_TokenInputView!
   
-  var toFieldHeightConstraint: NSLayoutConstraint!
-  
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     
@@ -128,10 +126,7 @@ class ViewController: UIViewController {
     self.bccField.addToken(token: FA_Token(displayText: "some token", baseObject:"some object"))
     self.bccField.addToken(token: FA_Token(displayText: "foo@bar.com", baseObject:"foo@bar.com"))
     self.bccField.addToken(token: FA_Token(displayText: "longeremail@thisshouldoverflow.com", baseObject:"longeremail@thisshouldoverflow.com"))
-    
-    self.toFieldHeightConstraint = NSLayoutConstraint(item: self.toField, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: 0.0)
-    self.view.addConstraint(self.toFieldHeightConstraint)
-    self.setAutoHeightToField()
+
     // Do any additional setup after loading the view, typically from a nib.
   }
   
@@ -145,11 +140,11 @@ class ViewController: UIViewController {
   }
   
   func setZeroHeightToField() {
-    NSLayoutConstraint.activateConstraints([self.toFieldHeightConstraint])
+    self.toField.setHeightToZero()
   }
   
   func setAutoHeightToField() {
-    NSLayoutConstraint.deactivateConstraints([self.toFieldHeightConstraint])
+    self.toField.setHeightToAuto()
   }
   
   func forceTokenize() {
