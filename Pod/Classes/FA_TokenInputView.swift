@@ -51,9 +51,9 @@ import Foundation
   
   /**
    * Called when the view has received a double tap gesture. If you want to display a menu above
-   * the `FA_TokenView` return true. 
+   * the `FA_TokenView` return true.
    * In order to display the items, you should also implement `tokenInputViewMenuItems`
-   * 
+   *
    * @return true if you want to display a UIMenuController element
    */
   optional func tokenInputViewShouldDisplayMenuItems(view: FA_TokenInputView) -> Bool
@@ -61,7 +61,7 @@ import Foundation
   /**
    * Called if the `tokenInputViewShouldDisplayMenuItems` returned true.
    * Return the UIMenuItem you want to display above or below the `FA_Token`
-   * 
+   *
    * @return the array of `UIMenuItem`
    */
   optional func tokenInputViewMenuItems(view: FA_TokenInputView, token: FA_Token) -> [UIMenuItem]
@@ -223,7 +223,7 @@ public class FA_TokenInputView: UIView {
     }
     
     self.tokens.append(theToken)
-    let tokenView = FA_TokenView(token: theToken)
+    let tokenView = FA_TokenView(token: theToken, displayMode: self.displayMode)
     tokenView.font = self.font
     tokenView.delegate = self;
     tokenView.setColors(self.textColor, selectedTextColor: self.selectedTextColor, selectedBackgroundColor: self.selectedBackgroundColor)

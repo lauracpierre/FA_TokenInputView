@@ -20,6 +20,7 @@ class FA_TokenView: UIView {
   var token: FA_Token!
   var displayText: String!
   var autocorrectionType: UITextAutocorrectionType = .No
+  var displayMode: FA_TokenInputViewMode = .View
   
   weak var delegate: FA_TokenViewDelegate?
   private(set) var selected = false
@@ -42,9 +43,10 @@ class FA_TokenView: UIView {
     }
   }
   
-  init(token theToken: FA_Token) {
+  init(token theToken: FA_Token, displayMode: FA_TokenInputViewMode = .Edit) {
     super.init(frame: CGRectZero)
     
+    self.displayMode = displayMode
     self.separatorColor = UIColor.lightGrayColor()
     self.selectedTextColor = UIColor.whiteColor()
     
@@ -119,7 +121,7 @@ class FA_TokenView: UIView {
     
     selected = selectedValue;
     
-    if (selected) {
+    if (selected && self.displayMode == .Edit) {
       self.becomeFirstResponder()
     }
     
@@ -207,6 +209,7 @@ class FA_TokenView: UIView {
     menu.menuItems = items
     menu.setTargetRect(self.bounds, inView: self)
     menu.setMenuVisible(true, animated: true)
+    self.resignFirstResponder()
   }
   
   override func layoutSubviews() {
@@ -227,6 +230,11 @@ class FA_TokenView: UIView {
   override func canPerformAction(action: Selector, withSender sender: AnyObject?) -> Bool {
     return false
   }
+  
+  override func canBecomeFirstResponder() -> Bool {
+    return true
+  }
+  
 }
 
 extension FA_TokenView: UIKeyInput {
@@ -242,7 +250,5 @@ extension FA_TokenView: UIKeyInput {
     self.delegate?.tokenViewDidRequestDelete(self, replaceWithText: nil)
   }
   
-  override func canBecomeFirstResponder() -> Bool {
-    return true
-  }
+  
 }
