@@ -249,6 +249,11 @@ public class FA_TokenInputView: UIView {
     self.removeConstraint(self.heightZeroConstraint)
   }
   
+  /**
+   * This method removes all tokens of the `FA_TokenInputView`.
+   *
+   * For each token removed, the delegate method `tokenInputViewDidRemoveToken` will be called if implemented.
+   */
   public func removeAllTokens() {
     let tokens = self.tokens
     self.tokens = []
@@ -284,6 +289,13 @@ public class FA_TokenInputView: UIView {
     
     self.updatePlaceholderTextVisibility()
     self.repositionViews()
+  }
+  
+  /**
+   * Returns the editable textfield view.
+   */
+  public func getTextFieldView() -> UITextField {
+    return self.textField
   }
   
   private func tokenizeTextFieldText() -> FA_Token? {
