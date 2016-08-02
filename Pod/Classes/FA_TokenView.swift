@@ -90,10 +90,10 @@ class FA_TokenView: UIView {
     
     // Listen for taps
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(FA_TokenView.handleTapGestureRecognizer(_:)))
-    let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTapGestureRecognizer(_:)))
-    doubleTapGesture.numberOfTapsRequired = 2
+    let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(FA_TokenView.handleLongPressGestureRecognizer(_:)))
+    longPressGesture.minimumPressDuration = 0.5
     self.addGestureRecognizer(tapGesture)
-    self.addGestureRecognizer(doubleTapGesture)
+    self.addGestureRecognizer(longPressGesture)
     self.setNeedsLayout()
     
   }
@@ -193,18 +193,23 @@ class FA_TokenView: UIView {
     self.delegate?.tokenViewDidRequestSelection(self)
   }
   
-  func handleDoubleTapGestureRecognizer(recognizer: UITapGestureRecognizer) {
+  func handleLongPressGestureRecognizer(recognizer: UITapGestureRecognizer) {
     guard let delegate = self.delegate else { return }
+    if recognizer.state != .Began {
+      return
+    }
     
     if !delegate.tokenViewShouldDisplayMenu(self) {
       return
     }
+  
     
     let items = delegate.tokenViewMenuItems(self)
     if items.isEmpty {
       return
     }
     self.becomeFirstResponder()
+    delegate.tokenViewDidRequestSelection(self)
     let menu = UIMenuController.sharedMenuController()
     menu.menuItems = items
     menu.setTargetRect(self.bounds, inView: self)
