@@ -208,7 +208,7 @@ class FA_TokenView: UIView {
     if items.isEmpty {
       return
     }
-    self.becomeFirstResponder()
+    self.label.becomeFirstResponder()
     delegate.tokenViewDidRequestSelection(self)
     let menu = UIMenuController.sharedMenuController()
     menu.menuItems = items
