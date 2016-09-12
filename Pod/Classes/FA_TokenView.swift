@@ -214,7 +214,6 @@ class FA_TokenView: UIView {
     menu.menuItems = items
     menu.setTargetRect(self.bounds, inView: self)
     menu.setMenuVisible(true, animated: true)
-    self.resignFirstResponder()
   }
   
   override func layoutSubviews() {
