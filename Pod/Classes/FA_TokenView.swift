@@ -27,7 +27,7 @@ class FA_TokenView: UIView {
   
   private static let PADDING_X: CGFloat = 4.0
   private static let PADDING_Y: CGFloat = 2.0
-  private var label: UILabel!
+  private var label: FA_TokenLabel!
   private var selectedBackgroundView: UIView!
   private var selectedLabel: UILabel!
   
@@ -55,7 +55,7 @@ class FA_TokenView: UIView {
     if let tint = self.tintColor {
       tintColor = tint
     }
-    self.label = UILabel(frame: CGRectMake(FA_TokenView.PADDING_X, FA_TokenView.PADDING_Y, 0, 0))
+    self.label = FA_TokenLabel(frame: CGRectMake(FA_TokenView.PADDING_X, FA_TokenView.PADDING_Y, 0, 0))
     self.label.textColor = tintColor
     self.label.backgroundColor = UIColor.clearColor()
     self.addSubview(label)

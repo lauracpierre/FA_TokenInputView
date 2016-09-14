@@ -16,6 +16,7 @@
 		3B7747EAFA567CD1FC799093ECC188E9 /* Pods-FA_TokenInputView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F7107B1A874D2478D9F3648EA0F52BF7 /* Pods-FA_TokenInputView_Example-dummy.m */; };
 		3EF49F98E433CB77652F7A18BC0EF5EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91F87D25DF965FB6654744EEA7E50E6E /* Foundation.framework */; };
 		53A09A9B450EB64C66A72A1AF0564DA7 /* Pods-FA_TokenInputView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B3000B54474CE8CABDC871D82747F9E4 /* Pods-FA_TokenInputView_Tests-dummy.m */; };
+		7AA20E0D1D89EE6900EE2863 /* FA_TokenLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA20E0C1D89EE6900EE2863 /* FA_TokenLabel.swift */; };
 		7CEA8DCCE18DB54449EDB4E28E6C6C19 /* FA_Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C382A6D0D32A7255664FEEDC2F29EF /* FA_Token.swift */; };
 		A1989E959220358C26C95D4C3CB9190B /* FA_TokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E25AF4995D360630547B1CD6AA460E4 /* FA_TokenView.swift */; };
 		A544B6EF68C000CC08A6967E37453B68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91F87D25DF965FB6654744EEA7E50E6E /* Foundation.framework */; };
@@ -70,6 +71,7 @@
 		6685B33D99E17446F9CD39D1126FA416 /* Pods_FA_TokenInputView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FA_TokenInputView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B2938C9C96A33B66517D261B4D486FB /* FA_TokenInputView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FA_TokenInputView.swift; sourceTree = "<group>"; };
 		77ECDECE8D662B19B4985DA8188DE080 /* Pods-FA_TokenInputView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-FA_TokenInputView_Example.modulemap"; sourceTree = "<group>"; };
+		7AA20E0C1D89EE6900EE2863 /* FA_TokenLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FA_TokenLabel.swift; sourceTree = "<group>"; };
 		7C63DCD4D21B23A52B68091135F5B453 /* FA_BackspaceDetectingTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FA_BackspaceDetectingTextField.swift; sourceTree = "<group>"; };
 		8E650C19CD3AFF12A0EF1E72D1B847DC /* FA_TokenInputView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FA_TokenInputView.modulemap; sourceTree = "<group>"; };
 		91F87D25DF965FB6654744EEA7E50E6E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -218,6 +220,7 @@
 				39C382A6D0D32A7255664FEEDC2F29EF /* FA_Token.swift */,
 				6B2938C9C96A33B66517D261B4D486FB /* FA_TokenInputView.swift */,
 				5E25AF4995D360630547B1CD6AA460E4 /* FA_TokenView.swift */,
+				7AA20E0C1D89EE6900EE2863 /* FA_TokenLabel.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				205723DC19E12A943E07181487656359 /* FA_BackspaceDetectingTextField.swift in Sources */,
 				7CEA8DCCE18DB54449EDB4E28E6C6C19 /* FA_Token.swift in Sources */,
 				051BB02A1628B6B10511EFDE049E3F2E /* FA_TokenInputView-dummy.m in Sources */,
+				7AA20E0D1D89EE6900EE2863 /* FA_TokenLabel.swift in Sources */,
 				212F44B95122D1A5AC6A5C14D7C962BC /* FA_TokenInputView.swift in Sources */,
 				A1989E959220358C26C95D4C3CB9190B /* FA_TokenView.swift in Sources */,
 			);
