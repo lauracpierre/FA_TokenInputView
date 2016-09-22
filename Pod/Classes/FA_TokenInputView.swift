@@ -695,12 +695,12 @@ extension FA_TokenInputView {
       
       let context = UIGraphicsGetCurrentContext()
       let bounds = self.bounds
-      CGContextSetStrokeColorWithColor(context, UIColor.lightGrayColor().CGColor)
-      CGContextSetLineWidth(context, 0.5)
+      CGContextSetStrokeColorWithColor(context!, UIColor.lightGrayColor().CGColor)
+      CGContextSetLineWidth(context!, 0.5)
       
-      CGContextMoveToPoint(context, 0, bounds.size.height)
-      CGContextAddLineToPoint(context, CGRectGetWidth(bounds), bounds.size.height)
-      CGContextStrokePath(context)
+      CGContextMoveToPoint(context!, 0, bounds.size.height)
+      CGContextAddLineToPoint(context!, CGRectGetWidth(bounds), bounds.size.height)
+      CGContextStrokePath(context!)
     }
   }
 }
