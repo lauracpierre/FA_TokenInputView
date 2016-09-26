@@ -25,18 +25,18 @@ class ViewController: UIViewController {
     toField.placeholderText = "Enter a name"
     toField.drawBottomBorder = true
     toField.delegate = self
-    toField.tintColor = UIColor.redColor()
+    toField.tintColor = UIColor.red
     toField.fieldName = "To"
-    toField.font = UIFont.systemFontOfSize(14.0)
-    toField.fieldNameFont = UIFont.systemFontOfSize(13.0)
-    toField.fieldNameColor = UIColor.greenColor()
+    toField.font = UIFont.systemFont(ofSize: 14.0)
+    toField.fieldNameFont = UIFont.systemFont(ofSize: 13.0)
+    toField.fieldNameColor = UIColor.green
     
-    let button: AnyObject = UIButton(type: .ContactAdd)
+    let button: AnyObject = UIButton(type: .contactAdd)
     if let button = button as? UIButton {
       toField.accessoryView = button
     }
     
-    let leftButton: AnyObject = UIButton(type: .InfoDark)
+    let leftButton: AnyObject = UIButton(type: .infoDark)
     if let leftButton = leftButton as? UIButton {
       toField.fieldView = leftButton
     }
@@ -46,10 +46,10 @@ class ViewController: UIViewController {
     ccField.placeholderText = "Enter a name"
     ccField.drawBottomBorder = true
     ccField.delegate = self
-    ccField.tintColor = UIColor.blueColor()
+    ccField.tintColor = UIColor.blue
     ccField.fieldName = "Cc"
     
-    bccField = FA_TokenInputView(mode: .View)
+    bccField = FA_TokenInputView(mode: .view)
     bccField.translatesAutoresizingMaskIntoConstraints = false
     bccField.drawBottomBorder = true
     bccField.fieldName = "Bcc"
@@ -60,7 +60,7 @@ class ViewController: UIViewController {
     bccField.delegate = self
     
     
-    let buttonright2: AnyObject = UIButton(type: .ContactAdd)
+    let buttonright2: AnyObject = UIButton(type: .contactAdd)
     if let buttonright2 = buttonright2 as? UIButton {
       ccField.accessoryView = buttonright2
     }
@@ -79,23 +79,23 @@ class ViewController: UIViewController {
     
     let button1 = UIButton()
     button1.translatesAutoresizingMaskIntoConstraints = false
-    button1.setTitle("Zero Height", forState: .Normal)
-    button1.addTarget(self, action: #selector(ViewController.setZeroHeightToField), forControlEvents: .TouchUpInside)
-    button1.titleLabel?.backgroundColor = UIColor.redColor()
+    button1.setTitle("Zero Height", for: UIControlState())
+    button1.addTarget(self, action: #selector(ViewController.setZeroHeightToField), for: .touchUpInside)
+    button1.titleLabel?.backgroundColor = UIColor.red
     
     let button2 = UIButton()
     button2.translatesAutoresizingMaskIntoConstraints = false
-    button2.setTitle("Auto Height", forState: .Normal)
-    button2.addTarget(self, action: #selector(ViewController.setAutoHeightToField), forControlEvents: .TouchUpInside)
+    button2.setTitle("Auto Height", for: UIControlState())
+    button2.addTarget(self, action: #selector(ViewController.setAutoHeightToField), for: .touchUpInside)
     button2.tintColor = toField.tintColor
-    button2.titleLabel?.backgroundColor = UIColor.redColor()
+    button2.titleLabel?.backgroundColor = UIColor.red
     
     let button3 = UIButton()
     button3.translatesAutoresizingMaskIntoConstraints = false
-    button3.setTitle("Force tokenize", forState: .Normal)
-    button3.addTarget(self, action: #selector(ViewController.forceTokenize), forControlEvents: .TouchUpInside)
+    button3.setTitle("Force tokenize", for: UIControlState())
+    button3.addTarget(self, action: #selector(ViewController.forceTokenize), for: .touchUpInside)
     button3.tintColor = toField.tintColor
-    button3.titleLabel?.backgroundColor = UIColor.redColor()
+    button3.titleLabel?.backgroundColor = UIColor.red
     
     self.view.addSubview(button1)
     self.view.addSubview(button2)
@@ -111,26 +111,26 @@ class ViewController: UIViewController {
       "topGuide": self.topLayoutGuide
       ] as [String: AnyObject]
     
-    self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[topGuide][to][cc][bcc]-30-[b1]", options: .DirectionLeadingToTrailing, metrics: nil, views: views))
-    self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[to]|", options: .DirectionLeftToRight, metrics: nil, views: views))
-    self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[cc]|", options: .DirectionLeftToRight, metrics: nil, views: views))
-    self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[bcc]|", options: .DirectionLeftToRight, metrics: nil, views: views))
-    self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[b1]-[b2]-[b3]-|", options: .AlignAllCenterY, metrics: nil, views: views))
+    self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[topGuide][to][cc][bcc]-30-[b1]", options: .directionLeadingToTrailing, metrics: nil, views: views))
+    self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[to]|", options: .directionLeftToRight, metrics: nil, views: views))
+    self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[cc]|", options: .directionLeftToRight, metrics: nil, views: views))
+    self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[bcc]|", options: .directionLeftToRight, metrics: nil, views: views))
+    self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[b1]-[b2]-[b3]-|", options: .alignAllCenterY, metrics: nil, views: views))
     
-    let view = UIView(frame: CGRectMake(0, 0, 200, 45))
-    view.backgroundColor = UIColor.redColor()
+    let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 45))
+    view.backgroundColor = UIColor.red
     
     self.toField.setInputAccessoryView(view)
     self.ccField.setInputAccessoryView(view)
     
-    self.bccField.addToken(token: FA_Token(displayText: "some token", baseObject:"some object"))
-    self.bccField.addToken(token: FA_Token(displayText: "foo@bar.com", baseObject:"foo@bar.com"))
-    self.bccField.addToken(token: FA_Token(displayText: "longeremail@thisshouldoverflow.com", baseObject:"longeremail@thisshouldoverflow.com"))
+    self.bccField.addToken(token: FA_Token(displayText: "some token", baseObject:"some object"	as AnyObject))
+    self.bccField.addToken(token: FA_Token(displayText: "foo@bar.com", baseObject:"foo@bar.com"	as AnyObject))
+    self.bccField.addToken(token: FA_Token(displayText: "longeremail@thisshouldoverflow.com", baseObject:"longeremail@thisshouldoverflow.com"	as AnyObject))
 
     // Do any additional setup after loading the view, typically from a nib.
   }
   
-  override func viewDidAppear(animated: Bool) {
+  override func viewDidAppear(_ animated: Bool) {
     toField.beginEditing()
   }
   
@@ -157,44 +157,44 @@ class ViewController: UIViewController {
 
 extension ViewController: FA_TokenInputViewDelegate {
   
-  func tokenInputViewDidAddToken(view: FA_TokenInputView, token theNewToken: FA_Token) {
+  func tokenInputViewDidAddToken(_ view: FA_TokenInputView, token theNewToken: FA_Token) {
     NSLog("new token");
   }
   
-  func tokenInputViewDidBeginEditing(view: FA_TokenInputView) {
+  func tokenInputViewDidBeginEditing(_ view: FA_TokenInputView) {
     
   }
   
-  func tokenInputViewDidChangeHeight(view: FA_TokenInputView, height newHeight: CGFloat) {
+  func tokenInputViewDidChangeHeight(_ view: FA_TokenInputView, height newHeight: CGFloat) {
     
   }
   
-  func tokenInputViewDidChangeText(view: FA_TokenInputView, text theNewText: String) {
+  func tokenInputViewDidChangeText(_ view: FA_TokenInputView, text theNewText: String) {
     
   }
   
-  func tokenInputViewDidEnditing(view: FA_TokenInputView) {
+  func tokenInputViewDidEnditing(_ view: FA_TokenInputView) {
     
   }
   
-  func tokenInputViewDidRemoveToken(view: FA_TokenInputView, token removedToken: FA_Token) {
+  func tokenInputViewDidRemoveToken(_ view: FA_TokenInputView, token removedToken: FA_Token) {
     
   }
   
-  func tokenInputViewTokenForText(view: FA_TokenInputView, text searchToken: String) -> FA_Token? {
-    return FA_Token(displayText: searchToken, baseObject: searchToken)
+  func tokenInputViewTokenForText(_ view: FA_TokenInputView, text searchToken: String) -> FA_Token? {
+    return FA_Token(displayText: searchToken, baseObject: searchToken as AnyObject)
   }
   
-  func tokenInputViewShouldDisplayMenuItems(view: FA_TokenInputView) -> Bool {
+  func tokenInputViewShouldDisplayMenuItems(_ view: FA_TokenInputView) -> Bool {
     return true
   }
   
-  func tokenInputViewMenuItems(view: FA_TokenInputView, token: FA_Token) -> [UIMenuItem] {
+  func tokenInputViewMenuItems(_ view: FA_TokenInputView, token: FA_Token) -> [UIMenuItem] {
     let menu = UIMenuItem(title: "Copy Email address", action: #selector(ViewController.copyFromMenu(_:)))
     return [menu]
   }
   
-  func copyFromMenu(sender: AnyObject) {
+  func copyFromMenu(_ sender: AnyObject) {
     NSLog("Copy from menu called")
   }
   

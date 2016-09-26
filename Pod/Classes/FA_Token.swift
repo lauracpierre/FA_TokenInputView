@@ -3,10 +3,10 @@
 import Foundation
 
 
-@objc public class FA_Token: NSObject {
+@objc open class FA_Token: NSObject {
     
-    public var displayText: String!
-    public var baseObject: AnyObject!
+    open var displayText: String!
+    open var baseObject: AnyObject!
     
     public init(displayText theText: String, baseObject theObject: AnyObject) {
         self.displayText = theText

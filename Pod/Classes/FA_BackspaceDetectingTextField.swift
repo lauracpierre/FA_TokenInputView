@@ -9,7 +9,7 @@
 import Foundation
 
 protocol FA_BackspaceDetectingTextFieldDelegate: class, UITextFieldDelegate {
-    func textFieldDidDeleteBackward(textField: UITextField)
+    func textFieldDidDeleteBackward(_ textField: UITextField)
 }
 
 /**
@@ -37,7 +37,7 @@ class FA_BackspaceDetectingTextField: UITextField {
     // On iOS 8.0, deleteBackward is not called anymore, so according to:
     // http://stackoverflow.com/a/25862878/9849
     // This method override should work
-    func keyboardInputShouldDelete(textField: UITextField) -> Bool {
+    func keyboardInputShouldDelete(_ textField: UITextField) -> Bool {
         let shouldDelete = true
         if textField.text?.isEmpty ?? true {
             self.deleteBackward()
