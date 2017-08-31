@@ -9,32 +9,32 @@
 import Foundation
 
 protocol FA_TokenViewDelegate: class {
-  func tokenViewDidRequestDelete(tokenView: FA_TokenView, replaceWithText theText: String?)
-  func tokenViewDidRequestSelection(tokenView: FA_TokenView)
-  func tokenViewShouldDisplayMenu(tokenView: FA_TokenView) -> Bool
-  func tokenViewMenuItems(tokenView: FA_TokenView) -> [UIMenuItem]
+  func tokenViewDidRequestDelete(_ tokenView: FA_TokenView, replaceWithText theText: String?)
+  func tokenViewDidRequestSelection(_ tokenView: FA_TokenView)
+  func tokenViewShouldDisplayMenu(_ tokenView: FA_TokenView) -> Bool
+  func tokenViewMenuItems(_ tokenView: FA_TokenView) -> [UIMenuItem]
 }
 
 class FA_TokenView: UIView {
   
   var token: FA_Token!
-  var displayText: String!
-  var autocorrectionType: UITextAutocorrectionType = .No
-  var displayMode: FA_TokenInputViewMode = .View
+  var displayText: String
+  var autocorrectionType: UITextAutocorrectionType = .no
+  var displayMode: FA_TokenInputViewMode = .view
   
   weak var delegate: FA_TokenViewDelegate?
-  private(set) var selected = false
+  fileprivate(set) var selected = false
   
-  private static let PADDING_X: CGFloat = 4.0
-  private static let PADDING_Y: CGFloat = 2.0
-  private var label: FA_TokenLabel!
-  private var selectedBackgroundView: UIView!
-  private var selectedLabel: UILabel!
+  fileprivate static let PADDING_X: CGFloat = 4.0
+  fileprivate static let PADDING_Y: CGFloat = 2.0
+  fileprivate var label: FA_TokenLabel!
+  fileprivate var selectedBackgroundView: UIView!
+  fileprivate var selectedLabel: UILabel!
   
-  private var textColor: UIColor!
-  private var selectedTextColor: UIColor!
-  private var selectedBackgroundColor: UIColor!
-  private var separatorColor: UIColor!
+  fileprivate var textColor: UIColor!
+  fileprivate var selectedTextColor: UIColor!
+  fileprivate var selectedBackgroundColor: UIColor!
+  fileprivate var separatorColor: UIColor!
   
   var font: UIFont! {
     didSet {
@@ -43,44 +43,46 @@ class FA_TokenView: UIView {
     }
   }
   
-  init(token theToken: FA_Token, displayMode: FA_TokenInputViewMode = .Edit) {
-    super.init(frame: CGRectZero)
+  init(token theToken: FA_Token, displayMode: FA_TokenInputViewMode = .edit) {
+    self.displayText = theToken.displayText
+    
+    super.init(frame: CGRect.zero)
     
     self.displayMode = displayMode
-    self.separatorColor = UIColor.lightGrayColor()
-    self.selectedTextColor = UIColor.whiteColor()
+    self.separatorColor = UIColor.lightGray
+    self.selectedTextColor = UIColor.white
     
     self.token = theToken
     var tintColor = UIColor(red: 0.0823, green: 0.4941, blue: 0.9843, alpha: 1.0)
     if let tint = self.tintColor {
       tintColor = tint
     }
-    self.label = FA_TokenLabel(frame: CGRectMake(FA_TokenView.PADDING_X, FA_TokenView.PADDING_Y, 0, 0))
+    self.label = FA_TokenLabel(frame: CGRect(x: FA_TokenView.PADDING_X, y: FA_TokenView.PADDING_Y, width: 0, height: 0))
     self.label.textColor = tintColor
-    self.label.backgroundColor = UIColor.clearColor()
+    self.label.backgroundColor = UIColor.clear
     self.addSubview(label)
     
-    self.selectedBackgroundView = UIView(frame: CGRectZero)
+    self.selectedBackgroundView = UIView(frame: CGRect.zero)
     self.selectedBackgroundView.backgroundColor = tintColor
     self.selectedBackgroundView.layer.cornerRadius = 3.0
-    self.selectedBackgroundView.hidden = true
+    self.selectedBackgroundView.isHidden = true
     self.addSubview(self.selectedBackgroundView)
     
-    self.selectedLabel = UILabel(frame: CGRectMake(FA_TokenView.PADDING_X, FA_TokenView.PADDING_Y, 0, 0))
-    self.selectedLabel.textColor = UIColor.whiteColor()
-    self.selectedLabel.backgroundColor = UIColor.clearColor()
-    self.selectedLabel.hidden = true
+    self.selectedLabel = UILabel(frame: CGRect(x: FA_TokenView.PADDING_X, y: FA_TokenView.PADDING_Y, width: 0, height: 0))
+    self.selectedLabel.textColor = UIColor.white
+    self.selectedLabel.backgroundColor = UIColor.clear
+    self.selectedLabel.isHidden = true
     self.addSubview(self.selectedLabel)
     
-    self.displayText = theToken.displayText
+   
     
     // Configure for the token, unselected shows "[displayText]," and selected is "[displayText]"
     let labelString = "\(self.displayText),"
     let attrString = NSMutableAttributedString(string: labelString, attributes: [
       NSFontAttributeName : self.label.font,
-      NSForegroundColorAttributeName : UIColor.lightGrayColor()
+      NSForegroundColorAttributeName : UIColor.lightGray
       ])
-    let tintRange = (labelString as NSString).rangeOfString(self.displayText)
+    let tintRange = (labelString as NSString).range(of: self.displayText)
     
     // Make the name part the system tint color
     attrString.setAttributes([NSForegroundColorAttributeName : tintColor], range: tintRange)
@@ -103,15 +105,15 @@ class FA_TokenView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
   
-  override func intrinsicContentSize() -> CGSize {
-    let size = self.selectedLabel.intrinsicContentSize()
-    return CGSizeMake(size.width+(2.0*FA_TokenView.PADDING_X), size.height+(2.0*FA_TokenView.PADDING_Y))
+  override var intrinsicContentSize : CGSize {
+    let size = self.selectedLabel.intrinsicContentSize
+    return CGSize(width: size.width+(2.0*FA_TokenView.PADDING_X), height: size.height+(2.0*FA_TokenView.PADDING_Y))
   }
   
-  override func sizeThatFits(size: CGSize) -> CGSize {
-    let fittingSize = CGSizeMake(size.width-(2.0*FA_TokenView.PADDING_X), size.height-(2.0*FA_TokenView.PADDING_Y))
+  override func sizeThatFits(_ size: CGSize) -> CGSize {
+    let fittingSize = CGSize(width: size.width-(2.0*FA_TokenView.PADDING_X), height: size.height-(2.0*FA_TokenView.PADDING_Y))
     let labelSize = self.selectedLabel.sizeThatFits(fittingSize)
-    return CGSizeMake(labelSize.width+(2.0*FA_TokenView.PADDING_X), labelSize.height+(2.0*FA_TokenView.PADDING_Y))
+    return CGSize(width: labelSize.width+(2.0*FA_TokenView.PADDING_X), height: labelSize.height+(2.0*FA_TokenView.PADDING_Y))
   }
   
   func setSelected(selected selectedValue: Bool, animated: Bool) {
@@ -121,7 +123,7 @@ class FA_TokenView: UIView {
     
     selected = selectedValue;
     
-    if (selected && self.displayMode == .Edit) {
+    if (selected && self.displayMode == .edit) {
       self.becomeFirstResponder()
     }
     
@@ -129,34 +131,34 @@ class FA_TokenView: UIView {
     if (animated) {
       if (self.selected) {
         self.selectedBackgroundView.alpha = 0.0
-        self.selectedBackgroundView.hidden = false
+        self.selectedBackgroundView.isHidden = false
         self.selectedLabel.alpha = 0.0
-        self.selectedLabel.hidden = false
+        self.selectedLabel.isHidden = false
       }
-      UIView.animateWithDuration(0.25, animations: {
+      UIView.animate(withDuration: 0.25, animations: {
         self.selectedBackgroundView.alpha = selectedAlpha
         self.selectedLabel.alpha = selectedAlpha
         }, completion: { (_) in
           if !self.selected {
-            self.selectedBackgroundView.hidden = true
-            self.selectedLabel.hidden = true
+            self.selectedBackgroundView.isHidden = true
+            self.selectedLabel.isHidden = true
           }
       })
       
     } else {
-      self.selectedBackgroundView.hidden = !self.selected;
-      self.selectedLabel.hidden = !self.selected;
+      self.selectedBackgroundView.isHidden = !self.selected;
+      self.selectedLabel.isHidden = !self.selected;
     }
   }
   
-  func setSeparatorVisibility(visible: Bool) {
+  func setSeparatorVisibility(_ visible: Bool) {
     self.displayText = self.token.displayText
     let labelString = "\(self.displayText),"
     let attrString = NSMutableAttributedString(string: labelString, attributes: [
       NSFontAttributeName : self.label.font,
-      NSForegroundColorAttributeName : visible ? UIColor.lightGrayColor() : UIColor.clearColor()
+      NSForegroundColorAttributeName : visible ? UIColor.lightGray : UIColor.clear
       ])
-    let tintRange = (labelString as NSString).rangeOfString(self.displayText)
+    let tintRange = (labelString as NSString).range(of: self.displayText)
     
     // Make the name part the system tint color
     attrString.setAttributes([NSForegroundColorAttributeName : self.textColor], range: tintRange)
@@ -164,7 +166,7 @@ class FA_TokenView: UIView {
   }
   
   
-  func setColors(textColor: UIColor, selectedTextColor: UIColor, selectedBackgroundColor: UIColor) {
+  func setColors(_ textColor: UIColor, selectedTextColor: UIColor, selectedBackgroundColor: UIColor) {
     self.textColor = textColor
     self.selectedTextColor = selectedTextColor
     self.selectedBackgroundColor = selectedBackgroundColor
@@ -177,9 +179,9 @@ class FA_TokenView: UIView {
     self.selectedBackgroundView.backgroundColor = self.selectedBackgroundColor
     self.selectedLabel.textColor = self.selectedTextColor
     
-    let attrString: AnyObject = self.label.attributedText!.mutableCopy()
+    let attrString: AnyObject = self.label.attributedText!.mutableCopy() as AnyObject
     let labelString = "\(self.displayText),"
-    let tintRange = (labelString as NSString).rangeOfString(self.displayText)
+    let tintRange = NSMakeRange(0, self.displayText.characters.count)
     // Make the overall text color gray
     attrString.setAttributes([NSForegroundColorAttributeName: self.separatorColor], range:NSMakeRange(attrString.length - 1, 1))
     // Make the name part the system tint color
@@ -189,13 +191,13 @@ class FA_TokenView: UIView {
     }
   }
   
-  func handleTapGestureRecognizer(recognizer: UITapGestureRecognizer) {
+  func handleTapGestureRecognizer(_ recognizer: UITapGestureRecognizer) {
     self.delegate?.tokenViewDidRequestSelection(self)
   }
   
-  func handleLongPressGestureRecognizer(recognizer: UITapGestureRecognizer) {
+  func handleLongPressGestureRecognizer(_ recognizer: UITapGestureRecognizer) {
     guard let delegate = self.delegate else { return }
-    if recognizer.state != .Began {
+    if recognizer.state != .began {
       return
     }
     
@@ -210,9 +212,9 @@ class FA_TokenView: UIView {
     }
     self.label.becomeFirstResponder()
     delegate.tokenViewDidRequestSelection(self)
-    let menu = UIMenuController.sharedMenuController()
+    let menu = UIMenuController.shared
     menu.menuItems = items
-    menu.setTargetRect(self.bounds, inView: self)
+    menu.setTargetRect(self.bounds, in: self)
     menu.setMenuVisible(true, animated: true)
   }
   
@@ -224,29 +226,29 @@ class FA_TokenView: UIView {
     //self.backgroundView.frame = bounds
     self.selectedBackgroundView.frame = bounds
     
-    var labelFrame = CGRectInset(bounds, FA_TokenView.PADDING_X, FA_TokenView.PADDING_Y)
+    var labelFrame = bounds.insetBy(dx: FA_TokenView.PADDING_X, dy: FA_TokenView.PADDING_Y)
     self.selectedLabel.frame = labelFrame;
     labelFrame.size.width += FA_TokenView.PADDING_X*2.0;
     self.label.frame = labelFrame;
     
   }
   
-  override func canPerformAction(action: Selector, withSender sender: AnyObject?) -> Bool {
+  override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
     return false
   }
   
-  override func canBecomeFirstResponder() -> Bool {
+  override var canBecomeFirstResponder : Bool {
     return true
   }
   
 }
 
 extension FA_TokenView: UIKeyInput {
-  func hasText() -> Bool {
+  var hasText : Bool {
     return true
   }
   
-  func insertText(text: String) {
+  func insertText(_ text: String) {
     self.delegate?.tokenViewDidRequestDelete(self, replaceWithText: text)
   }
   

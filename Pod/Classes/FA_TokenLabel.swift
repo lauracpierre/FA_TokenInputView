@@ -10,11 +10,11 @@ import Foundation
 
 class FA_TokenLabel: UILabel {
   
-  override func canBecomeFirstResponder() -> Bool {
+  override var canBecomeFirstResponder : Bool {
     return true
   }
   
-  override func canPerformAction(action: Selector, withSender sender: AnyObject?) -> Bool {
+  override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
     return false
   }
 }
