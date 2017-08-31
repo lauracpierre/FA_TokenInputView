@@ -180,7 +180,6 @@ class FA_TokenView: UIView {
     self.selectedLabel.textColor = self.selectedTextColor
     
     let attrString: AnyObject = self.label.attributedText!.mutableCopy() as AnyObject
-    let labelString = "\(self.displayText),"
     let tintRange = NSMakeRange(0, self.displayText.characters.count)
     // Make the overall text color gray
     attrString.setAttributes([NSForegroundColorAttributeName: self.separatorColor], range:NSMakeRange(attrString.length - 1, 1))

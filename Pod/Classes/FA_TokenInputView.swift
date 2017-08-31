@@ -277,7 +277,7 @@ open class FA_TokenInputView: UIView {
   }
   
   open func forceTokenizeCurrentText() {
-    self.tokenizeTextFieldText()
+    let _ = self.tokenizeTextFieldText()
   }
   
   fileprivate func removeTokenAtIndex(_ index: Int) {
@@ -567,12 +567,12 @@ extension FA_TokenInputView: UITextFieldDelegate  {
     self.accessoryView?.isHidden = true
     self.delegate?.tokenInputViewDidEnditing?(self)
     if (self.tokenizeOnEndEditing) {
-      self.tokenizeTextFieldText()
+      let _ = self.tokenizeTextFieldText()
     }
   }
   
   public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    self.tokenizeTextFieldText()
+    let _ = self.tokenizeTextFieldText()
     return false
   }
   
