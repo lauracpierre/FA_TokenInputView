@@ -89,6 +89,8 @@ open class FA_TokenInputView: UIView {
     return self.tokens.map { $0 }
   }
   
+  open var shouldForceRepositionning = false
+  
   var text: String {
     return self.textField.text!
   }
@@ -192,13 +194,13 @@ open class FA_TokenInputView: UIView {
     
     self.backgroundColor = UIColor.clear
     self.intrinsicContentHeight = self.STANDARD_ROW_HEIGHT
-    self.repositionViews()
     
     self.clipsToBounds = true
     self.displayMode = mode
     self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(FA_TokenInputView.viewWasTapped)))
     self.heightZeroConstraint = NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 0.0)
     
+    self.repositionViews()
     self.setDefaultColors()
   }
   
@@ -333,10 +335,12 @@ open class FA_TokenInputView: UIView {
   fileprivate func repositionViews() {
     let bounds = self.bounds
     
-    if bounds.height == 0 {
+    if bounds.height == 0 && !shouldForceRepositionning {
       self.repositionViewZeroHeight()
       return
     }
+    
+    self.shouldForceRepositionning = false
     
     let rightBoundary = bounds.width - self.PADDING_RIGHT
     var firstLineRightBoundary = rightBoundary
@@ -484,8 +488,8 @@ open class FA_TokenInputView: UIView {
   }
   
   override open func layoutSubviews() {
-    super.layoutSubviews()
     self.repositionViews()
+    super.layoutSubviews()
   }
   
   fileprivate func updatePlaceholderTextVisibility() {
