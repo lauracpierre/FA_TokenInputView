@@ -347,7 +347,6 @@ open class FA_TokenInputView: UIView {
     
     var curX = self.PADDING_LEFT
     var curY = self.PADDING_TOP
-    var isOnFirstLine = true
     var yPositionForLastToken: CGFloat = 0.0
     
     // Position field view (if set)
@@ -385,17 +384,24 @@ open class FA_TokenInputView: UIView {
     
     // Position token views
     var tokenRect = CGRect.null
+    var tokensByLine: [Int: Int] = [0:0]
+    var currentLine = 0
+    
     for view in self.tokenViews {
       view.sizeToFit()
       tokenRect = view.frame
       
-      let tokenBoundary = isOnFirstLine ? firstLineRightBoundary : rightBoundary
-      if (curX + tokenRect.width > tokenBoundary) {
+      let tokenBoundary = currentLine == 0 ? firstLineRightBoundary : rightBoundary
+      let hasOtherToken = (tokensByLine[currentLine] ?? 0) != 0
+      if (curX + tokenRect.width > tokenBoundary && hasOtherToken) {
         // Need a new line
+        currentLine += 1
+        tokensByLine[currentLine] = 0
         curX = self.PADDING_LEFT
         curY += self.STANDARD_ROW_HEIGHT+self.VERTICAL_SPACE_BETWEEN_ROWS
-        isOnFirstLine = false
       }
+      
+      tokensByLine[currentLine] = tokensByLine[currentLine]! + 1
       
       tokenRect.origin.x = curX
       // Center our tokenView vertially within STANDARD_ROW_HEIGHT
@@ -414,10 +420,9 @@ open class FA_TokenInputView: UIView {
     
     // Always indent textfield by a little bit
     curX += self.TEXT_FIELD_HSPACE
-    let textBoundary = isOnFirstLine ? firstLineRightBoundary : rightBoundary
+    let textBoundary = currentLine == 0 ? firstLineRightBoundary : rightBoundary
     var availableWidthForTextField = textBoundary - curX
     if (availableWidthForTextField < self.MINIMUM_TEXTFIELD_WIDTH) {
-      isOnFirstLine = false
       curX = self.PADDING_LEFT + self.TEXT_FIELD_HSPACE
       curY += self.STANDARD_ROW_HEIGHT+self.VERTICAL_SPACE_BETWEEN_ROWS
       // Adjust the width
