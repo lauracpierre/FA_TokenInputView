@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B31855098C8DF35662181E4 /* Pods_FA_TokenInputView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D212F99CCD1A92C2B6AA41A1 /* Pods_FA_TokenInputView_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		011381DC05C5B2DBF484B0EB /* Pods_FA_TokenInputView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6EA93001EBC206E5C8EEAF /* Pods_FA_TokenInputView_Tests.framework */; };
+		054E9AF3ED1F60CB71FDCDE3 /* Pods_FA_TokenInputView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3150EDEAD22779B481C8EEF0 /* Pods_FA_TokenInputView_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		A09DA3F9C9E8C2A13D185CD8 /* Pods_FA_TokenInputView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F346C39F002BD0346A45E4 /* Pods_FA_TokenInputView_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,11 +28,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0F4296FB3FCB834588EED11F /* Pods-FA_TokenInputView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FA_TokenInputView_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FA_TokenInputView_Tests/Pods-FA_TokenInputView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		0F641FD6751EA9AF77D6BD2F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		18F346C39F002BD0346A45E4 /* Pods_FA_TokenInputView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FA_TokenInputView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2213788D142B5E69C65C70DA /* Pods-FA_TokenInputView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FA_TokenInputView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FA_TokenInputView_Example/Pods-FA_TokenInputView_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		142AB96CC1FC8CC965C9AFAE /* Pods-FA_TokenInputView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FA_TokenInputView_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-FA_TokenInputView_Example/Pods-FA_TokenInputView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		2FD288DFF97E1C06383B9387 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		3150EDEAD22779B481C8EEF0 /* Pods_FA_TokenInputView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FA_TokenInputView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* FA_TokenInputView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FA_TokenInputView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,10 +42,11 @@
 		607FACE51AFB9204008FA782 /* FA_TokenInputView_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FA_TokenInputView_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		84B6E4D0D7E1FD5093407E4D /* Pods-FA_TokenInputView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FA_TokenInputView_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-FA_TokenInputView_Example/Pods-FA_TokenInputView_Example.release.xcconfig"; sourceTree = "<group>"; };
-		8BECE8438223538A4ECDA69D /* Pods-FA_TokenInputView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FA_TokenInputView_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FA_TokenInputView_Tests/Pods-FA_TokenInputView_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		668A645DE8125247C8533AF7 /* Pods-FA_TokenInputView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FA_TokenInputView_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FA_TokenInputView_Tests/Pods-FA_TokenInputView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		78814DE7AEE216AF6B67B564 /* Pods-FA_TokenInputView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FA_TokenInputView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FA_TokenInputView_Example/Pods-FA_TokenInputView_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		7E6EA93001EBC206E5C8EEAF /* Pods_FA_TokenInputView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FA_TokenInputView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		896FB73A2DCCF58BC4BF6A5A /* Pods-FA_TokenInputView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FA_TokenInputView_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FA_TokenInputView_Tests/Pods-FA_TokenInputView_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A66C29C20C1E22BDE052E6A4 /* FA_TokenInputView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = FA_TokenInputView.podspec; path = ../FA_TokenInputView.podspec; sourceTree = "<group>"; };
-		D212F99CCD1A92C2B6AA41A1 /* Pods_FA_TokenInputView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FA_TokenInputView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A09DA3F9C9E8C2A13D185CD8 /* Pods_FA_TokenInputView_Example.framework in Frameworks */,
+				054E9AF3ED1F60CB71FDCDE3 /* Pods_FA_TokenInputView_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,31 +62,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B31855098C8DF35662181E4 /* Pods_FA_TokenInputView_Tests.framework in Frameworks */,
+				011381DC05C5B2DBF484B0EB /* Pods_FA_TokenInputView_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2E69AAB48585E87EC6AE60EA /* Pods */ = {
+		463F0BB90030CF5EB184082C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2213788D142B5E69C65C70DA /* Pods-FA_TokenInputView_Example.debug.xcconfig */,
-				84B6E4D0D7E1FD5093407E4D /* Pods-FA_TokenInputView_Example.release.xcconfig */,
-				0F4296FB3FCB834588EED11F /* Pods-FA_TokenInputView_Tests.debug.xcconfig */,
-				8BECE8438223538A4ECDA69D /* Pods-FA_TokenInputView_Tests.release.xcconfig */,
+				78814DE7AEE216AF6B67B564 /* Pods-FA_TokenInputView_Example.debug.xcconfig */,
+				142AB96CC1FC8CC965C9AFAE /* Pods-FA_TokenInputView_Example.release.xcconfig */,
+				668A645DE8125247C8533AF7 /* Pods-FA_TokenInputView_Tests.debug.xcconfig */,
+				896FB73A2DCCF58BC4BF6A5A /* Pods-FA_TokenInputView_Tests.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		5328CDA28F7763F746F37C93 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				18F346C39F002BD0346A45E4 /* Pods_FA_TokenInputView_Example.framework */,
-				D212F99CCD1A92C2B6AA41A1 /* Pods_FA_TokenInputView_Tests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		607FACC71AFB9204008FA782 = {
@@ -96,8 +87,8 @@
 				607FACD21AFB9204008FA782 /* Example for FA_TokenInputView */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				2E69AAB48585E87EC6AE60EA /* Pods */,
-				5328CDA28F7763F746F37C93 /* Frameworks */,
+				463F0BB90030CF5EB184082C /* Pods */,
+				ECC238FE58ABE18C4A820C9C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,6 +150,15 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		ECC238FE58ABE18C4A820C9C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3150EDEAD22779B481C8EEF0 /* Pods_FA_TokenInputView_Example.framework */,
+				7E6EA93001EBC206E5C8EEAF /* Pods_FA_TokenInputView_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -166,12 +166,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "FA_TokenInputView_Example" */;
 			buildPhases = (
-				BCA87027EA85D62570900977 /* Check Pods Manifest.lock */,
+				4E12AE8D03802CC487A19FD5 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				07C2375FA7FBA24078D2485C /* Embed Pods Frameworks */,
-				7CDD98419C68848D95BF7238 /* Copy Pods Resources */,
+				48346BCEA8C19951140FC536 /* [CP] Embed Pods Frameworks */,
+				5E720EAEEA0A891191E26077 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -186,12 +186,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "FA_TokenInputView_Tests" */;
 			buildPhases = (
-				A23B8F8BBF2A03A204908047 /* Check Pods Manifest.lock */,
+				4E315EA2E5B1D6B9E47D82EE /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				C13D219D5896EF4A9603BDF0 /* Embed Pods Frameworks */,
-				096923B26245821F7059E6E5 /* Copy Pods Resources */,
+				38C5F0F34E3F187E910A2163 /* [CP] Embed Pods Frameworks */,
+				CF643D7B10BAF7D4E80F3E74 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,11 +210,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = X549L7572J;
 						LastSwiftMigration = 0800;
 					};
 					607FACE41AFB9204008FA782 = {
@@ -264,44 +265,86 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		07C2375FA7FBA24078D2485C /* Embed Pods Frameworks */ = {
+		38C5F0F34E3F187E910A2163 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FA_TokenInputView_Tests/Pods-FA_TokenInputView_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FA_TokenInputView/FA_TokenInputView.framework",
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FA_TokenInputView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FA_TokenInputView_Tests/Pods-FA_TokenInputView_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		48346BCEA8C19951140FC536 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FA_TokenInputView_Example/Pods-FA_TokenInputView_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FA_TokenInputView/FA_TokenInputView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FA_TokenInputView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FA_TokenInputView_Example/Pods-FA_TokenInputView_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		096923B26245821F7059E6E5 /* Copy Pods Resources */ = {
+		4E12AE8D03802CC487A19FD5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FA_TokenInputView_Example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FA_TokenInputView_Tests/Pods-FA_TokenInputView_Tests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7CDD98419C68848D95BF7238 /* Copy Pods Resources */ = {
+		4E315EA2E5B1D6B9E47D82EE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FA_TokenInputView_Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E720EAEEA0A891191E26077 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,49 +352,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FA_TokenInputView_Example/Pods-FA_TokenInputView_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A23B8F8BBF2A03A204908047 /* Check Pods Manifest.lock */ = {
+		CF643D7B10BAF7D4E80F3E74 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		BCA87027EA85D62570900977 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C13D219D5896EF4A9603BDF0 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FA_TokenInputView_Tests/Pods-FA_TokenInputView_Tests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FA_TokenInputView_Tests/Pods-FA_TokenInputView_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -412,14 +425,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -459,14 +478,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -493,9 +518,10 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2213788D142B5E69C65C70DA /* Pods-FA_TokenInputView_Example.debug.xcconfig */;
+			baseConfigurationReference = 78814DE7AEE216AF6B67B564 /* Pods-FA_TokenInputView_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X549L7572J;
 				INFOPLIST_FILE = FA_TokenInputView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -507,9 +533,10 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84B6E4D0D7E1FD5093407E4D /* Pods-FA_TokenInputView_Example.release.xcconfig */;
+			baseConfigurationReference = 142AB96CC1FC8CC965C9AFAE /* Pods-FA_TokenInputView_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X549L7572J;
 				INFOPLIST_FILE = FA_TokenInputView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -521,7 +548,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0F4296FB3FCB834588EED11F /* Pods-FA_TokenInputView_Tests.debug.xcconfig */;
+			baseConfigurationReference = 668A645DE8125247C8533AF7 /* Pods-FA_TokenInputView_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -543,7 +570,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8BECE8438223538A4ECDA69D /* Pods-FA_TokenInputView_Tests.release.xcconfig */;
+			baseConfigurationReference = 896FB73A2DCCF58BC4BF6A5A /* Pods-FA_TokenInputView_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

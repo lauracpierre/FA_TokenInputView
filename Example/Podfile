@@ -1,12 +1,12 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'FA_TokenInputView_Example', :exclusive => true do
+project 'FA_TokenInputView'
+
+target 'FA_TokenInputView_Example' do
   pod "FA_TokenInputView", :path => "../"
 end
 
-target 'FA_TokenInputView_Tests', :exclusive => true do
+target 'FA_TokenInputView_Tests' do
   pod "FA_TokenInputView", :path => "../"
-
-  
 end
