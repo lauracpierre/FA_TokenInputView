@@ -1,6 +1,0 @@
-framework module FA_TokenInputView {
-  umbrella header "FA_TokenInputView-umbrella.h"
-
-  export *
-  module * { export * }
-}
