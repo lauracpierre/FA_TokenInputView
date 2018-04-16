@@ -79,13 +79,13 @@ class FA_TokenView: UIView {
     // Configure for the token, unselected shows "[displayText]," and selected is "[displayText]"
     let labelString = "\(self.displayText),"
     let attrString = NSMutableAttributedString(string: labelString, attributes: [
-      NSFontAttributeName : self.label.font,
-      NSForegroundColorAttributeName : UIColor.lightGray
+      NSAttributedStringKey.font : self.label.font,
+      NSAttributedStringKey.foregroundColor : UIColor.lightGray
       ])
     let tintRange = (labelString as NSString).range(of: self.displayText)
     
     // Make the name part the system tint color
-    attrString.setAttributes([NSForegroundColorAttributeName : tintColor], range: tintRange)
+    attrString.setAttributes([NSAttributedStringKey.foregroundColor : tintColor], range: tintRange)
     
     self.label.attributedText = attrString
     self.selectedLabel.text = self.displayText
@@ -155,13 +155,13 @@ class FA_TokenView: UIView {
     self.displayText = self.token.displayText
     let labelString = "\(self.displayText),"
     let attrString = NSMutableAttributedString(string: labelString, attributes: [
-      NSFontAttributeName : self.label.font,
-      NSForegroundColorAttributeName : visible ? UIColor.lightGray : UIColor.clear
+      NSAttributedStringKey.font : self.label.font,
+      NSAttributedStringKey.foregroundColor : visible ? UIColor.lightGray : UIColor.clear
       ])
     let tintRange = (labelString as NSString).range(of: self.displayText)
     
     // Make the name part the system tint color
-    attrString.setAttributes([NSForegroundColorAttributeName : self.textColor], range: tintRange)
+    attrString.setAttributes([NSAttributedStringKey.foregroundColor : self.textColor], range: tintRange)
     self.label.attributedText = attrString
   }
   
@@ -180,21 +180,21 @@ class FA_TokenView: UIView {
     self.selectedLabel.textColor = self.selectedTextColor
     
     let attrString: AnyObject = self.label.attributedText!.mutableCopy() as AnyObject
-    let tintRange = NSMakeRange(0, self.displayText.characters.count)
+    let tintRange = NSMakeRange(0, self.displayText.count)
     // Make the overall text color gray
-    attrString.setAttributes([NSForegroundColorAttributeName: self.separatorColor], range:NSMakeRange(attrString.length - 1, 1))
+    attrString.setAttributes([NSAttributedStringKey.foregroundColor: self.separatorColor], range:NSMakeRange(attrString.length - 1, 1))
     // Make the name part the system tint color
-    attrString.setAttributes([NSForegroundColorAttributeName : self.textColor], range:tintRange)
+    attrString.setAttributes([NSAttributedStringKey.foregroundColor : self.textColor], range:tintRange)
     if let attrString = attrString as? NSAttributedString {
       self.label.attributedText = attrString
     }
   }
   
-  func handleTapGestureRecognizer(_ recognizer: UITapGestureRecognizer) {
+  @objc func handleTapGestureRecognizer(_ recognizer: UITapGestureRecognizer) {
     self.delegate?.tokenViewDidRequestSelection(self)
   }
   
-  func handleLongPressGestureRecognizer(_ recognizer: UITapGestureRecognizer) {
+  @objc func handleLongPressGestureRecognizer(_ recognizer: UITapGestureRecognizer) {
     guard let delegate = self.delegate else { return }
     if recognizer.state != .began {
       return

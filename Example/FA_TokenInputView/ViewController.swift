@@ -139,15 +139,15 @@ class ViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
   
-  func setZeroHeightToField() {
+  @objc func setZeroHeightToField() {
     self.toField.setHeightToZero()
   }
   
-  func setAutoHeightToField() {
+  @objc func setAutoHeightToField() {
     self.toField.setHeightToAuto()
   }
   
-  func forceTokenize() {
+  @objc func forceTokenize() {
     self.toField.forceTokenizeCurrentText()
     NSLog("just called validateCurrentTokendsadsa")
   }
@@ -194,7 +194,7 @@ extension ViewController: FA_TokenInputViewDelegate {
     return [menu]
   }
   
-  func copyFromMenu(_ sender: AnyObject) {
+  @objc func copyFromMenu(_ sender: AnyObject) {
     NSLog("Copy from menu called")
   }
   

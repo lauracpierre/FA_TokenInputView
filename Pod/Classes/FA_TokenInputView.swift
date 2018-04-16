@@ -500,15 +500,15 @@ open class FA_TokenInputView: UIView {
     }
   }
   
-  func onTextFieldDidChange(_ textfield: UITextField) {
+  @objc func onTextFieldDidChange(_ textfield: UITextField) {
     self.delegate?.tokenInputViewDidChangeText?(self, text: textfield.text!)
   }
   
-  func onTextFieldDidEndEditing(_ textfield: UITextField) {
+  @objc func onTextFieldDidEndEditing(_ textfield: UITextField) {
     self.repositionViews()
   }
   
-  func viewWasTapped() {
+  @objc func viewWasTapped() {
     self.unselectAllTokenViewsAnimated(true)
     if self.displayMode == .view {
       return
