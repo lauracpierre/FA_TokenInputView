@@ -258,11 +258,18 @@ open class FA_TokenInputView: UIView {
    */
   open func removeAllTokens() {
     let tokens = self.tokens
+    let tokenViews = self.tokenViews
     self.tokens = []
     self.tokenViews = []
+
     tokens.forEach {
       self.delegate?.tokenInputViewDidRemoveToken?(self, token: $0)
     }
+
+    tokenViews.forEach {
+      $0.removeFromSuperview()
+    }
+    
     self.repositionViews()
   }
   
