@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "FA_TokenInputView"
-  s.version          = "0.2.4"
+  s.version          = "0.2.5"
   s.summary          = "FA_TokenInputView is a simple tokenview mimicking Apple mail token view."
   s.description      = <<-DESC
                        A Swift rewrite of TokenInputView used for the iOS FrontApp.

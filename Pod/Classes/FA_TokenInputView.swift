@@ -11,6 +11,11 @@ import Foundation
 @objc public protocol FA_TokenInputViewDelegate: class {
   
   /**
+   *  Called when the text field is tapped
+   */
+  @objc optional func tokenInputViewWasClicked(_ view: FA_TokenInputView, token: FA_Token)
+  
+  /**
    *  Called when the text field begins editing
    */
   @objc optional func tokenInputViewDidEnditing(_ view: FA_TokenInputView)
@@ -739,6 +744,7 @@ extension FA_TokenInputView: FA_TokenViewDelegate {
     }
   }
   func tokenViewDidRequestSelection(_ tokenView: FA_TokenView) {
+    self.delegate?.tokenInputViewWasClicked?(self, token: tokenView.token)
     self.selectTokenView(tokenView: tokenView, animated: true)
   }
   
