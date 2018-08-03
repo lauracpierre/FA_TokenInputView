@@ -10,6 +10,7 @@ import Foundation
 
 protocol FA_TokenViewDelegate: class {
   func tokenViewDidRequestDelete(_ tokenView: FA_TokenView, replaceWithText theText: String?)
+  func tokenViewWasTapped(_ tokenView: FA_TokenView)
   func tokenViewDidRequestSelection(_ tokenView: FA_TokenView)
   func tokenViewShouldDisplayMenu(_ tokenView: FA_TokenView) -> Bool
   func tokenViewMenuItems(_ tokenView: FA_TokenView) -> [UIMenuItem]
@@ -94,6 +95,8 @@ class FA_TokenView: UIView {
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(FA_TokenView.handleTapGestureRecognizer(_:)))
     let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(FA_TokenView.handleLongPressGestureRecognizer(_:)))
     longPressGesture.minimumPressDuration = 0.5
+    tapGesture.require(toFail: longPressGesture)
+
     self.addGestureRecognizer(tapGesture)
     self.addGestureRecognizer(longPressGesture)
     self.setNeedsLayout()
@@ -191,6 +194,7 @@ class FA_TokenView: UIView {
   }
   
   @objc func handleTapGestureRecognizer(_ recognizer: UITapGestureRecognizer) {
+    self.delegate?.tokenViewWasTapped(self)
     self.delegate?.tokenViewDidRequestSelection(self)
   }
   

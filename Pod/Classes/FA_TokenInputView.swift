@@ -233,7 +233,10 @@ open class FA_TokenInputView: UIView {
     let tokenView = FA_TokenView(token: theToken, displayMode: self.displayMode)
     tokenView.font = self.font
     tokenView.delegate = self;
-    tokenView.setColors(self.textColor, selectedTextColor: self.selectedTextColor, selectedBackgroundColor: self.selectedBackgroundColor)
+    tokenView.setColors(theToken.textColor ?? self.textColor,
+                        selectedTextColor: theToken.selectedTextColor ?? self.selectedTextColor,
+                        selectedBackgroundColor: theToken.selectedBackgroundColor ?? self.selectedBackgroundColor)
+    
     let intrinsicSize = tokenView.intrinsicContentSize
     tokenView.frame = CGRect(x: 0, y: 0, width: intrinsicSize.width, height: intrinsicSize.height)
     self.tokenViews.append(tokenView)
@@ -729,6 +732,10 @@ extension FA_TokenInputView {
 
 // MARK: - FA_TokenViewDelegate
 extension FA_TokenInputView: FA_TokenViewDelegate {
+  func tokenViewWasTapped(_ tokenView: FA_TokenView) {
+    self.delegate?.tokenInputViewWasClicked?(self, token: tokenView.token)
+  }
+  
   func tokenViewDidRequestDelete(_ tokenView: FA_TokenView, replaceWithText theText: String?) {
     if self.displayMode == .view {
       return
@@ -743,8 +750,8 @@ extension FA_TokenInputView: FA_TokenViewDelegate {
       self.removeTokenAtIndex(index)
     }
   }
+  
   func tokenViewDidRequestSelection(_ tokenView: FA_TokenView) {
-    self.delegate?.tokenInputViewWasClicked?(self, token: tokenView.token)
     self.selectTokenView(tokenView: tokenView, animated: true)
   }
   
