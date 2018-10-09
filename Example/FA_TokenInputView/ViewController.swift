@@ -79,20 +79,20 @@ class ViewController: UIViewController {
     
     let button1 = UIButton()
     button1.translatesAutoresizingMaskIntoConstraints = false
-    button1.setTitle("Zero Height", for: UIControlState())
+    button1.setTitle("Zero Height", for: .normal)
     button1.addTarget(self, action: #selector(ViewController.setZeroHeightToField), for: .touchUpInside)
     button1.titleLabel?.backgroundColor = UIColor.red
     
     let button2 = UIButton()
     button2.translatesAutoresizingMaskIntoConstraints = false
-    button2.setTitle("Auto Height", for: UIControlState())
+    button2.setTitle("Auto Height", for: .normal)
     button2.addTarget(self, action: #selector(ViewController.setAutoHeightToField), for: .touchUpInside)
     button2.tintColor = toField.tintColor
     button2.titleLabel?.backgroundColor = UIColor.red
     
     let button3 = UIButton()
     button3.translatesAutoresizingMaskIntoConstraints = false
-    button3.setTitle("Force tokenize", for: UIControlState())
+    button3.setTitle("Force tokenize", for: .normal)
     button3.addTarget(self, action: #selector(ViewController.forceTokenize), for: .touchUpInside)
     button3.tintColor = toField.tintColor
     button3.titleLabel?.backgroundColor = UIColor.red

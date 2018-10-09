@@ -1,16 +1,16 @@
 PODS:
-  - FA_TokenInputView (0.2.3)
+  - FA_TokenInputView (0.2.6)
 
 DEPENDENCIES:
   - FA_TokenInputView (from `../`)
 
 EXTERNAL SOURCES:
   FA_TokenInputView:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  FA_TokenInputView: e1d86e6db85b170a171bccb47cd9313f56e3c2bd
+  FA_TokenInputView: 408b6377be645f3cde6b5567e6742f40e22c3109
 
 PODFILE CHECKSUM: b79b71df3f3fb0c2a94176313cf43ebb5dce370b
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3

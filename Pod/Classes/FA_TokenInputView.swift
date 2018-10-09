@@ -210,7 +210,7 @@ open class FA_TokenInputView: UIView {
   }
   
   override open var intrinsicContentSize : CGSize {
-    return CGSize(width: UIViewNoIntrinsicMetric, height: max(self.MINIMUM_VIEW_HEIGHT, self.intrinsicContentHeight))
+    return CGSize(width: UIView.noIntrinsicMetric, height: max(self.MINIMUM_VIEW_HEIGHT, self.intrinsicContentHeight))
   }
   
   open func setColors(_ textColor: UIColor, selectedTextColor: UIColor, selectedBackgroundColor: UIColor) {
