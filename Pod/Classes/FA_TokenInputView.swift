@@ -324,6 +324,7 @@ open class FA_TokenInputView: UIView {
         self.onTextFieldDidChange(self.textField)
         return token
       }
+      self.textField.text = ""
     }
     
     return nil
